@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/background"
+    android:background="@android:color/white">
+
+    <EditText
+        android:textAlignment="center"
+        android:id="@+id/email_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
+        android:hint="Email"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="68dp" />
+
+    <EditText
+        android:textAlignment="center"
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/connect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:text="Connection"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <Button
+
+        android:id="@+id/registerbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:text="Pas encore enregistré? Enregistre toi!"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="15dp"
+        android:layout_marginTop="58dp" />
+
+
+</LinearLayout>

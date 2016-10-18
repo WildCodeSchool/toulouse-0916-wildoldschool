@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.90"
+        android:layout_gravity="top">
+
+        <ListView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/list_chats" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.10">
+
+        <Button
+            android:id="@+id/create_chat"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Créer un Chat"/>
+
+        <Button
+            android:id="@+id/deco"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:text="deco"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
