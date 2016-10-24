@@ -8,12 +8,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * Created by chantome on 21/09/2016.
@@ -22,18 +21,12 @@ public class AuthActivity extends AppCompatActivity {
 
     private String email;
     private String password;
-    private String pseudo;
     private FirebaseAuth mAuth;
-    //private FirebaseAuth.AuthStateListener mAuthListener;
     private static final String TAG = "WOS-Auth";
     private EditText editEmail;
     private EditText editPassword;
-    private EditText editPseudo;
     private Button button;
     private Button btnRegister;
-
-    private FirebaseDatabase database = FirebaseDatabase.getInstance();
-    private DatabaseReference myRef = database.getReference();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,39 +39,32 @@ public class AuthActivity extends AppCompatActivity {
         button = (Button) findViewById(R.id.connect);
         btnRegister = (Button) findViewById(R.id.registerbtn);
 
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            Log.i(TAG,"Tentative de connexion...en cours..");
+            //Log.i(TAG,"Tentative de connexion...en cours..");
 
             email = editEmail.getText().toString();
             password = editPassword.getText().toString();
 
             if(email.isEmpty() || password.isEmpty()){
-                Log.i(TAG,"les champs sont vides..");
+                //Log.i(TAG,"les champs sont vides..");
+                editEmail.setError("champ vide !");
             }
             else{
-                Log.i(TAG,"les champs sont bien rempli..");
+                //Log.i(TAG,"les champs sont bien rempli..");
 
                 mAuth.signInWithEmailAndPassword(email,password)
                     .addOnCompleteListener(AuthActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(!task.isSuccessful()){
-                                //Erreur d'authentification
-                                Log.i(TAG,"Erreur d'authentification..");
+                                //Log.i(TAG,"Erreur d'authentification..");
+                                editEmail.setError("Email ou mot de passe incorrect !");
+                                TextView textViewToChange = (TextView) findViewById(R.id.error);
+                                textViewToChange.setText("Email ou mot de passe incorrect !");
+                                textViewToChange.setVisibility(View.VISIBLE);
                             }else{
-                                Log.i(TAG,"YOLOOOOOOOOO !!");
-                                //Ajouter l'utilisateur dans notre Firebase
-
-                                //verifier si l'utilisateur existe en base de donnée - BenoitPart Sinon direction formulaire.
-
-                                //String Uid = mAuth.getCurrentUser().getUid();
-                                //User monUser = new User(pseudo,true);
-                                //myRef.child("users").child(Uid).setValue(monUser);
-                                //Log.i(TAG,"Utilisateur ajouté !!");
-
                                 Intent intent = new Intent(AuthActivity.this, MainActivity.class);
                                 startActivity(intent);
                                 finish();
@@ -88,7 +74,6 @@ public class AuthActivity extends AppCompatActivity {
                 }
                 }
             });
-
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override

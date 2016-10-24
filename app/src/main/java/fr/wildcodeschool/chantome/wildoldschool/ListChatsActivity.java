@@ -70,9 +70,7 @@ public class ListChatsActivity extends AppCompatActivity{
         getUsers();
         getChatKeys();
 
-        //rootChats.orderByKey().equalTo(true,"status");
-
-        //Afficher ma liste de Chats ATTENTION Va falloir faire une REQUETE !!
+        //liste chats
         FirebaseListAdapter<Chat> fireadapter = new FirebaseListAdapter<Chat>(
                 ListChatsActivity.this,
                 Chat.class,
@@ -81,45 +79,34 @@ public class ListChatsActivity extends AppCompatActivity{
         ) {
             @Override
             protected void populateView(View v, Chat model, int position) {
-                Log.i(TAG, "populateView..");
-                Log.i(TAG, "Chat key.."+chatKeys.get(position).toString());
+                //Log.i(TAG, "populateView..");
+                //Log.i(TAG, "Chat key.."+chatKeys.get(position).toString());
 
+                //Je veux afficher que mes chats PUBLIQUE
+                String monName = (String) model.getName().toString();
+                String monAuthor = (String) model.getAuthor().toString();
+                String maDesc = (String) model.getDesc().toString();
+                boolean monStatus = Boolean.valueOf(model.isStatus());
+                boolean monAccess = Boolean.valueOf(model.isAccess());
 
-                // Status:true= OUVERT ; Access:true = PRIVEE  <--- Tiens, ca ressemble presque à une requete
-                //if(model.isStatus() == true && model.isAccess() == false){
+                Map<String, String> monGroupUser = new HashMap<String, String>();
+                monGroupUser = model.getGroupUser();
+                //Log.i(TAG, "Données récupérer.. on fait quoi maintenant ?..");
 
-                    //Je veux afficher que mes chats PUBLIQUE et OUVERT
-                    //DONC SI Status = TRUE && Access = FALSE ( Cherche pas t'as tords )
-                    Log.i(TAG, "Chat Ouvert & Public..");
+                String monTs = (String) model.getCreated_on().toString();
+                //Log.i(TAG,"monTS = "+monTs);
 
-                    String monName = (String) model.getName().toString();
-                    String monAuthor = (String) model.getAuthor().toString();
-                    String maDesc = (String) model.getDesc().toString();
-                    boolean monStatus = Boolean.valueOf(model.isStatus());
-                    boolean monAccess = Boolean.valueOf(model.isAccess());
+                Chat monChat = new Chat(monName, monAuthor, maDesc, monStatus, monAccess, monGroupUser,monTs);
 
-                    Map<String, String> monGroupUser = new HashMap<String, String>();
-                    monGroupUser = model.getGroupUser();
-                    Log.i(TAG, "Données récupérer.. on fait quoi maintenant ?..");
+                //Log.i(TAG, "J'ajoute mon Chat dans ma Collection de chats..");
+                mesChats.add(monChat);
 
-                    String monTs = (String) model.getCreated_on().toString();
-                    Log.i(TAG,"monTS = "+monTs);
+                TextView txtName = (TextView) v.findViewById(R.id.chat_name);
+                TextView txtDesc = (TextView) v.findViewById(R.id.chat_desc);
 
-                    Chat monChat = new Chat(monName, monAuthor, maDesc, monStatus, monAccess, monGroupUser,monTs);
-
-                    Log.i(TAG, "J'ajoute mon Chat dans ma Collection de chats..");
-                    mesChats.add(monChat);
-
-                    TextView txtName = (TextView) v.findViewById(R.id.chat_name);
-                    TextView txtDesc = (TextView) v.findViewById(R.id.chat_desc);
-
-                    txtName.setText(model.getName().toString());
-                    txtDesc.setText(model.getDesc().toString());
-                    Log.i(TAG, "Et on envoi ! Next !?");
-                //}else{
-                //    Log.i(TAG,"Chat par défaut..");
-                //}
-
+                txtName.setText(model.getName().toString());
+                txtDesc.setText(model.getDesc().toString());
+                //Log.i(TAG, "Et on envoi ! Next !?");
             }
         };
 
@@ -128,10 +115,11 @@ public class ListChatsActivity extends AppCompatActivity{
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.i(TAG,"onItemClick..");
-                Log.i(TAG,"ID.."+chatKeys.get(position).toString());
+                //Log.i(TAG,"onItemClick..");
+                //Log.i(TAG,"ID.."+chatKeys.get(position).toString());
                 //verifier si l'utilisateur existe en base de donnée - a faire
-                Log.i(TAG,users.get(current_id).getPseudo().toString());
+                //Log.i(TAG,users.get(current_id).getPseudo().toString());
+
                 //On ajout l'utilisateur dans le Group
                 rootChats.child(chatKeys.get(position).toString()).child("groupUser").child(current_id).setValue(users.get(current_id).getPseudo().toString());
 
@@ -141,8 +129,7 @@ public class ListChatsActivity extends AppCompatActivity{
                 mBundle.putString("chatKey",chatKeys.get(position).toString());
                 chatActivite.putExtras(mBundle);
                 startActivity(chatActivite);
-                Log.i(TAG,"Direction le chat..");
-                //finish ?
+                //Log.i(TAG,"Direction le chat..");
             }
         });
 
@@ -153,23 +140,18 @@ public class ListChatsActivity extends AppCompatActivity{
             }
         });
 
-
-
         //Déconnexion de l'utilisateur
         btnDeco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i(TAG,"Merci Tchusss..");
+                //Log.i(TAG,"Merci Tchusss..");
                 users.get(current_id).setOnline(false);
                 Auth.signOut();
                 mainActivite = new Intent(ListChatsActivity.this, MainActivity.class);
                 startActivity(mainActivite);
+                finish();
             }
         });
-    }
-
-    public  void addUserToGroup(String idUser, String nameUser){
-
     }
 
     public void getChatKeys(){
@@ -261,15 +243,15 @@ public class ListChatsActivity extends AppCompatActivity{
 
     public void addNewChat(){
 
-        Log.i(TAG,"Ajouter un chat..chargement du formulaire..");
+        //Log.i(TAG,"Ajouter un chat..chargement du formulaire..");
 
         AlertDialog.Builder builder = new AlertDialog.Builder(ListChatsActivity.this);
 
         builder.setTitle("Créer un chat");
 
-        Log.i(TAG,"Jusqu'ici tout va bien !");
+        //Log.i(TAG,"Jusqu'ici tout va bien !");
         LayoutInflater inflater = ListChatsActivity.this.getLayoutInflater();
-        Log.i(TAG,"ATTENTION !");
+        //Log.i(TAG,"ATTENTION !");
 
         v_iew = inflater.inflate(R.layout.form_add_chat, null) ;
         builder.setView(v_iew);
@@ -277,7 +259,7 @@ public class ListChatsActivity extends AppCompatActivity{
         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Log.i(TAG,"onClick..");
+                //Log.i(TAG,"onClick..");
                 current_id = Auth.getCurrentUser().getUid();
 
                 EditText editName, editDesc;
@@ -306,27 +288,26 @@ public class ListChatsActivity extends AppCompatActivity{
 
                 tsLong = System.currentTimeMillis();
                 ts = tsLong.toString();
-                Log.i(TAG,"Time : "+ts);
+                //Log.i(TAG,"Time : "+ts);
 
                 Chat monChat = new Chat(chatName,current_id,chatDesc,status,access,groupUsers,ts);
                 rootChat.setValue(monChat);
-                Log.i(TAG,"Chat Crée..");
-                getChatKeys();
+                //Log.i(TAG,"Chat Crée..");
             }
         });
 
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Log.i(TAG,"Bon tantpis..");
+                //Log.i(TAG,"Bon tantpis..");
                 dialog.cancel();
             }
         });
 
-        Log.i(TAG,"OUF ! On va afficher la vue");
+        //Log.i(TAG,"OUF ! On va afficher la vue");
         builder.create();
         builder.show();
-        Log.i(TAG,"Rock & Roll !!!");
+        //Log.i(TAG,"Rock & Roll !!!");
     }
 
     public void onCheckboxClicked(View view) {

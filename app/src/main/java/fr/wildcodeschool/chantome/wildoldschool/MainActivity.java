@@ -36,13 +36,14 @@ public class MainActivity extends AppCompatActivity {
                     Log.i(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
                     chatsActivite = new Intent(MainActivity.this, ListChatsActivity.class);
                     startActivity(chatsActivite);
+                    finish();
                 } else {
                     // Il ne l'est pas.. allons l'authentifier alors.
                     Log.i(TAG, "onAuthStateChanged:signed_out");
                     authActivite = new Intent(MainActivity.this, AuthActivity.class);
                     startActivity(authActivite);
+                    finish();
                 }
-                finish();
             }
         };
 
