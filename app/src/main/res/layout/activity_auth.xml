@@ -3,7 +3,20 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/background"
-    android:background="@android:color/white">
+    android:padding="10dp"
+    android:background="#F5C87F">
+
+    <TextView
+        android:id="@+id/error"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:background="#E0001A"
+        android:textColor="#FFFFFF"
+        android:visibility="gone"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:text="" />
 
     <EditText
         android:textAlignment="center"
@@ -12,14 +25,19 @@
         android:layout_height="wrap_content"
         android:focusableInTouchMode="true"
         android:hint="Email"
-        android:textColor="@android:color/black"
-        android:layout_marginTop="68dp" />
+        android:padding="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#FFFFFF"
+        android:textColor="@android:color/black" />
 
     <EditText
         android:textAlignment="center"
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#FFFFFF"
         android:hint="Password"
         android:inputType="textPassword"
         android:textColor="@android:color/black" />
@@ -28,7 +46,7 @@
         android:id="@+id/connect"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/white"
+        android:background="#ACE075"
         android:text="Connection"
         android:textColor="@android:color/black"
         android:textStyle="bold" />
@@ -38,12 +56,12 @@
         android:id="@+id/registerbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@null"
-        android:text="Pas encore enregistré? Enregistre toi!"
+        android:background="#F5A623"
+        android:text="S'enregistrer"
         android:textAllCaps="false"
         android:textColor="@android:color/black"
         android:textSize="15dp"
-        android:layout_marginTop="58dp" />
+        android:layout_marginTop="50dp" />
 
 
 </LinearLayout>

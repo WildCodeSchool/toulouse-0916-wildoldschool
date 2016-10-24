@@ -55,7 +55,7 @@ public class ChatActivity extends AppCompatActivity{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
-        Log.i(TAG,"What's Up ?! ");
+        //Log.i(TAG,"What's Up ?! ");
 
         Auth = FirebaseAuth.getInstance();
         monChat = (String) getIntent().getStringExtra("chatKey");
@@ -72,8 +72,8 @@ public class ChatActivity extends AppCompatActivity{
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 chatName = dataSnapshot.child("name").getValue().toString();
-                Log.i(TAG,"Le nom du Chat est "+chatName);
-                introText.setText("Bienvenu dans le chat : "+chatName);
+                //Log.i(TAG,"Le nom du Chat est "+chatName);
+                introText.setText(chatName);
             }
 
             @Override
@@ -114,38 +114,20 @@ public class ChatActivity extends AppCompatActivity{
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i(TAG,"Envoi message..");
+
+                //Log.i(TAG,"Envoi message..");
                 monUser = Auth.getCurrentUser().getUid().toString();
                 monMessage = editMessage.getText().toString();
+
+                if (monMessage.isEmpty()){
+                    editMessage.setError("vide");
+                    return;
+                }
 
                 //Tableau temporaire des clés messages
                 Map<String,Object> map = new HashMap<String, Object>();
                 temp_key = rootChatMessages.push().getKey().toString();
                 rootChatMessages.updateChildren(map);
-
-                //INCREMENTATION NBRS_MESSAGE
-                /*
-                rootChat.runTransaction(new Transaction.Handler() {
-                    @Override
-                    public Transaction.Result doTransaction(MutableData currentData) {
-                        if (currentData.child("nbrs_messages").getValue() == null) {
-                            currentData.child("nbrs_messages").setValue(1);
-                        } else {
-                            currentData.child("nbrs_messages").setValue((Long) currentData.getValue() + 1);
-                        }
-
-                        return Transaction.success(currentData.child("nbrs_messages"));
-                    }
-
-                    @Override
-                    public void onComplete(DatabaseError databaseError, boolean b, DataSnapshot dataSnapshot) {
-                        if (databaseError != null) {
-                            Log.i(TAG,"Firebase counter increment failed.");
-                        } else {
-                            Log.i(TAG,"Firebase counter increment succeeded.");
-                        }
-                    }
-                });*/
 
                 tsLong = System.currentTimeMillis();
                 monTs = tsLong.toString();
@@ -153,13 +135,12 @@ public class ChatActivity extends AppCompatActivity{
                 rootChatMessage = rootChatMessages.child(temp_key);
                 message = new Message(monUser,monMessage,monTs);
                 rootChatMessage.setValue(message);
-                Log.i(TAG,"c'est bon..");
-
+                //Log.i(TAG,"c'est bon..");
 
                 //Efface le text du champs message aprés l'envoi de celui-ci
                 recycler.scrollToPosition(mAdapter.getItemCount());
                 editMessage.setText("");
-                Log.i(TAG,"on nettoit..");
+                //Log.i(TAG,"on nettoit..");
             }
         });
 

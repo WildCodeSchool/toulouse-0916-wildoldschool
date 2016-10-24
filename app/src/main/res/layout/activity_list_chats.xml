@@ -2,7 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="#F5C87F"
     android:weightSum="1">
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Bienvenue wilder !"
+        android:textColor="#000000"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:background="#ACE075"
+        android:visibility="gone"/>
 
     <LinearLayout
         android:orientation="vertical"
@@ -23,19 +35,27 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.10">
+        android:layout_weight="0.10"
+        android:padding="10dp">
 
         <Button
             android:id="@+id/create_chat"
-            android:layout_width="200dp"
+            android:layout_width="0dp"
+            android:background="#ACE075"
+            android:layout_weight="0.50"
             android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
             android:text="Créer un Chat"/>
 
         <Button
             android:id="@+id/deco"
-            android:layout_width="75dp"
+            android:background="#E0001A"
+            android:layout_width="0dp"
+            android:layout_weight="0.50"
+            android:layout_marginLeft="5dp"
             android:layout_height="wrap_content"
-            android:text="deco"/>
+            android:text="Déconnexion"
+            android:textColor="#FFFFFF"/>
 
     </LinearLayout>
 

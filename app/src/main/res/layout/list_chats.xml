@@ -2,22 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="60dp"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:background="#4597F5">
 
     <TextView
         android:gravity="center"
         android:id="@+id/chat_name"
         android:text="Android"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
+        android:layout_weight="0.30"
+        android:textColor="#000000"
+        android:maxLength="10"
         android:layout_height="match_parent"/>
 
     <TextView
         android:id="@+id/chat_desc"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="0.70"
         android:layout_height="match_parent"
-        android:gravity="center_vertical"
-        android:textSize="20sp"
-        android:textColor="#000000"
+        android:padding="5dp"
+        android:textSize="10sp"
+        android:maxLength="60"
         android:text="Description"/>
 
 </LinearLayout>
