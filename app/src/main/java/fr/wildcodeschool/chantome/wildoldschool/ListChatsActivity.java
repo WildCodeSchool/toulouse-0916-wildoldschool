@@ -1,13 +1,21 @@
 package fr.wildcodeschool.chantome.wildoldschool;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -52,6 +60,7 @@ public class ListChatsActivity extends AppCompatActivity{
     private ListView list;
     private Long tsLong;
     private String ts;
+    Toolbar myToolbar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -65,6 +74,9 @@ public class ListChatsActivity extends AppCompatActivity{
         list = (ListView) findViewById(R.id.list_chats);
         count=0;
         current_id = Auth.getCurrentUser().getUid().toString();
+
+        myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
 
         //Ajoute mes Utilisateur et mes clé de chat dans une Collection
         getUsers();
@@ -145,7 +157,7 @@ public class ListChatsActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 //Log.i(TAG,"Merci Tchusss..");
-                users.get(current_id).setOnline(false);
+                //users.get(current_id).setOnline(false);
                 Auth.signOut();
                 mainActivite = new Intent(ListChatsActivity.this, MainActivity.class);
                 startActivity(mainActivite);
@@ -328,4 +340,32 @@ public class ListChatsActivity extends AppCompatActivity{
                 break;
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.navbar, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_chats:
+                // User chose the "Settings" item, show the app settings UI...
+                return true;
+
+            case R.id.action_profil:
+                // User chose the "Favorite" action, mark the current item
+                // as a favorite...
+                return true;
+
+            default:
+                // If we got here, the user's action was not recognized.
+                // Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
+
 }
