@@ -3,6 +3,15 @@
 
     <item
         is-multidex="false"
+        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="ea4b54dcbfe5ac05efb0a314105f07258118d3a7">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-iid-9.0.0_31d4895e78497458a40affdd28cb03bb708f253c.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-common/9.4.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -11,12 +20,13 @@
         <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-auth-common-9.4.0_3d58cfab9ed6fc571aaa6e7634cbf74a24f7d380.jar" />
     </item>
     <item
-        jar="/Users/chantome/.gradle/caches/modules-2/files-2.1/com.firebase/firebase-client-jvm/2.4.0/558e074f136fee609b8758480ecd00e286595137/firebase-client-jvm-2.4.0.jar"
-        jumboMode="false"
+        is-multidex="false"
+        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="558e074f136fee609b8758480ecd00e286595137">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/firebase-client-jvm-2.4.0_2c81a904473fca7a11ff959431a73fafce17a76a.jar" />
+        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-24.2.0_eb5024345395ad1885a9c45f2280d40aab781551.jar" />
     </item>
     <item
         is-multidex="false"
@@ -38,6 +48,33 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.firebaseui/firebase-ui-database/0.5.3/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d729037ff4a83220d1f706356ff0dbe4b85e0d73">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.firebaseui-firebase-ui-database-0.5.3_28a5c01fc3333d00dfd2531a3d0e128bb13112f0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="f9b41622897665678d31d78e57a361cb0cebcb0d">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-24.2.0_7d669724140bc083daf1a0af02b08f3088d9b4b9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chantome/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.0/support-annotations-24.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="6be858a75633b1f0a2d24cad740db57775cb6871">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/support-annotations-24.2.0_672ad31a4767a7d29fa7ae00e3c277c391282d73.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.0/jars/libs/internal_impl-24.2.0.jar"
         jumboMode="true"
         optimize="true"
@@ -55,14 +92,6 @@
         <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/tubesock-0.0.12_4a037d01fdbc0fe677c4161e590e3e26157b6dd4.jar" />
     </item>
     <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/libs/internal_impl-24.2.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="6e02e34594ebe9c0501ffda8dd48497f81b82977">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.0_66c77e2a6c5a70c71f3232d84db3abd0619845fe.jar" />
-    </item>
-    <item
         is-multidex="false"
         jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.0/jars/classes.jar"
         jumboMode="true"
@@ -70,6 +99,33 @@
         revision="24.0.2"
         sha1="f3ee23ef25c9a8fe3d40246d0b7097267963a612">
         <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.2.0_1048559616335141be2be66163fc32218b96014b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="18b5697c65c4fe5b7381613b8b8ae9ac52e26fa7">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-common-9.4.0_dd25bb372dc53b1943b0c60a00ca2ceeae3c9444.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/9.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="0e4d53465cc141bec58f18a894e4c4e80633fa32">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-database-connection-9.4.0_edc318baa37b459a779abe289a3785c87e100945.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="0dc8ab07eeceda5e99b305c8069765056b6e5c9d">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-impl-9.0.0_7ff030004203b9c9eeea78c3c12fb1cce35c8f12.jar" />
     </item>
     <item
         is-multidex="false"
@@ -81,20 +137,13 @@
         <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-24.2.0_7d24669e3d8906fa8a48e2629603e33395982ce3.jar" />
     </item>
     <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.0.0/jars/classes.jar"
-        jumboMode="false"
+        is-multidex="false"
+        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/customtabs/23.4.0/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="4ef8ab5fee042023018249474bc93bd4b2b9c17e">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-9.0.0_691854f767acae7b5725b074966eb8f6a0a145a6.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.2.2/285cb9c666f0f0f3dd8a1be04e1f457eb7b15113/jackson-annotations-2.2.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="285cb9c666f0f0f3dd8a1be04e1f457eb7b15113">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/jackson-annotations-2.2.2_3205bd1b3f3c66df996b85aea88a2f89113adaf9.jar" />
+        sha1="2d1eaa9e0b98f8fc4c2b989d9b30d4f1480648ac">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-customtabs-23.4.0_ca3aabfe0dc3ffa56286ea4a8930a7f4e8bba293.jar" />
     </item>
     <item
         is-multidex="false"
@@ -106,12 +155,22 @@
         <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-9.4.0_c82daac779e28b097ab78a2f2882c52b7707cc0d.jar" />
     </item>
     <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.0/jars/classes.jar"
-        jumboMode="false"
+        is-multidex="false"
+        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/9.4.0/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-24.2.0_ef77298fbb217ab5ac5d0b96a3c7a7fc433d41c8.jar" />
+        sha1="4b630471536351be7c3c3100735c75b7ad2cbd84">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-auth-9.4.0_58d5782cc81decaa36123420d518e67bd0a70f9e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.firebaseui/firebase-ui-auth/0.5.3/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="4d1eef77feb4f5eb598bc3eed8b55c93f04f08e5">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.firebaseui-firebase-ui-auth-0.5.3_6c05154e0476a36ee76c29b7657882b5670e9180.jar" />
     </item>
     <item
         is-multidex="false"
@@ -123,20 +182,13 @@
         <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_6babebfdede0bf700b3d47a87cbd4f9eb9964928.jar" />
     </item>
     <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/9.4.0/jars/classes.jar"
-        jumboMode="false"
+        is-multidex="false"
+        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.14.1/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="4b630471536351be7c3c3100735c75b7ad2cbd84">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-auth-9.4.0_58d5782cc81decaa36123420d518e67bd0a70f9e.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="0dc8ab07eeceda5e99b305c8069765056b6e5c9d">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-impl-9.0.0_7ff030004203b9c9eeea78c3c12fb1cce35c8f12.jar" />
+        sha1="42a3ae86dd3ae2876d3e95c2e6e104ae57a50a65">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-android-sdk-4.14.1_5ad820315caa3d21985946ad4d229e75918591b9.jar" />
     </item>
     <item
         is-multidex="false"
@@ -149,12 +201,57 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/chantome/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.2.2/d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b/jackson-core-2.2.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/jackson-core-2.2.2_9275f53d86937f1d18ff5b90cd685bbda0f8b8d3.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="45f5eda279825ff470e3f51019d374d1ef61e000">
         <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.2.0_cf4523be3fee54134c2f0143c6ad2b52830cef54.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/9.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="4348dd26d83b56c2058b768222c3271bce911724">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-auth-9.4.0_42b2451c13c6057d31f0db4420c9d68f2c09cba4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.firebaseui/firebase-ui/0.5.3/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="fbed8999711c2ea4a32aebfb9541e9873b5a83ca">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.firebaseui-firebase-ui-0.5.3_dc872805d0979e701ca7ba62eea67e746e948fd3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-module/9.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="6bc41d9d6fd12d2ef23c785a259011001f4a1a5b">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-auth-module-9.4.0_b614b341550a8b8cbf0771148cc5113e5ac5708f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chantome/.gradle/caches/modules-2/files-2.1/com.firebase/firebase-client-jvm/2.4.0/558e074f136fee609b8758480ecd00e286595137/firebase-client-jvm-2.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="558e074f136fee609b8758480ecd00e286595137">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/firebase-client-jvm-2.4.0_2c81a904473fca7a11ff959431a73fafce17a76a.jar" />
     </item>
     <item
         is-multidex="false"
@@ -167,6 +264,33 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-24.2.0_57831301aa8d610e96a638219e4cbd7922d068ef.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth-base/9.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="58c9f5ee817fdb8b658fd7455fadfb74119f7ee9">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-auth-base-9.4.0_48232e916fe26008a12b39e20a7de8048f9b61bb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/design/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.4.0_7e2f6b83cae04dcacf0e95eeb5b8aee73a208af8.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -175,12 +299,58 @@
         <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.4.0_e83b58b6decd38ac53e87beaaae15889ddd31c99.jar" />
     </item>
     <item
-        jar="/Users/chantome/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.2.2/d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b/jackson-core-2.2.2.jar"
-        jumboMode="false"
+        is-multidex="false"
+        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/jackson-core-2.2.2_9275f53d86937f1d18ff5b90cd685bbda0f8b8d3.jar" />
+        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.0_53a7da843853750308812e8d58f1caf4e5779126.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/9.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="84bf369090a8f7e293817efbd6ccf31ada1be32b">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-database-9.4.0_90d1b8ceb9c1012cd5fa059cb705dfef8d8c795b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chantome/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-applinks/1.4.0/8ad21bf21784dacce5f2043afb97218cc377e835/bolts-applinks-1.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/bolts-applinks-1.4.0_bd16076b509fb21517f59702eddae322e083b333.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="4ef8ab5fee042023018249474bc93bd4b2b9c17e">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-9.0.0_691854f767acae7b5725b074966eb8f6a0a145a6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="8a36d229011e75f0caef408e1adf0d3fd4d94e02">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-9.4.0_648b969c27f9612ee3b672a9590266ecc1aebccd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="6e02e34594ebe9c0501ffda8dd48497f81b82977">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.0_66c77e2a6c5a70c71f3232d84db3abd0619845fe.jar" />
     </item>
     <item
         is-multidex="false"
@@ -193,6 +363,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/chantome/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.2.2/285cb9c666f0f0f3dd8a1be04e1f457eb7b15113/jackson-annotations-2.2.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="285cb9c666f0f0f3dd8a1be04e1f457eb7b15113">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/jackson-annotations-2.2.2_3205bd1b3f3c66df996b85aea88a2f89113adaf9.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -201,12 +380,22 @@
         <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.2.0_3616f2b4031bae217817b5896fb0fb1d69ebf136.jar" />
     </item>
     <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.firebaseui/firebase-ui-auth/0.5.3/jars/classes.jar"
-        jumboMode="false"
+        is-multidex="false"
+        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.0/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="4d1eef77feb4f5eb598bc3eed8b55c93f04f08e5">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.firebaseui-firebase-ui-auth-0.5.3_6c05154e0476a36ee76c29b7657882b5670e9180.jar" />
+        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-24.2.0_ef77298fbb217ab5ac5d0b96a3c7a7fc433d41c8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="b96413c0d8827ae766d9bb4d04884cb5d5fdea0f">
+        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_5683a84f9c3df3da063b0a1d22d6a48f5e798e7b.jar" />
     </item>
     <item
         is-multidex="false"
@@ -214,7 +403,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="798f8a214879272f51d98560261c2185950fa137">
+        sha1="01083c8e41845f1378f30b0ee4be32c951ec6ca6">
         <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/instant-run_021fd519cd30250251ef33290f943d9d3ead6261.jar" />
     </item>
     <item
@@ -227,209 +416,6 @@
         <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.0_ea45482aeafdb0b80fff60deffe4968e6f1fdb2f.jar" />
     </item>
     <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/9.4.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="0e4d53465cc141bec58f18a894e4c4e80633fa32">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-database-connection-9.4.0_edc318baa37b459a779abe289a3785c87e100945.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="ea4b54dcbfe5ac05efb0a314105f07258118d3a7">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-iid-9.0.0_31d4895e78497458a40affdd28cb03bb708f253c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-24.2.0_eb5024345395ad1885a9c45f2280d40aab781551.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.14.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="42a3ae86dd3ae2876d3e95c2e6e104ae57a50a65">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-android-sdk-4.14.1_5ad820315caa3d21985946ad4d229e75918591b9.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/9.4.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="4348dd26d83b56c2058b768222c3271bce911724">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-auth-9.4.0_42b2451c13c6057d31f0db4420c9d68f2c09cba4.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="f9b41622897665678d31d78e57a361cb0cebcb0d">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-24.2.0_7d669724140bc083daf1a0af02b08f3088d9b4b9.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="beac40bcc8a320a896dd15f5109cfcaea5e1e0e3">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.2.0_3616f2b4031bae217817b5896fb0fb1d69ebf136.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="18b5697c65c4fe5b7381613b8b8ae9ac52e26fa7">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-common-9.4.0_dd25bb372dc53b1943b0c60a00ca2ceeae3c9444.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/customtabs/23.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="2d1eaa9e0b98f8fc4c2b989d9b30d4f1480648ac">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-customtabs-23.4.0_ca3aabfe0dc3ffa56286ea4a8930a7f4e8bba293.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/9.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="4b630471536351be7c3c3100735c75b7ad2cbd84">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-auth-9.4.0_58d5782cc81decaa36123420d518e67bd0a70f9e.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/9.4.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="84bf369090a8f7e293817efbd6ccf31ada1be32b">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-database-9.4.0_90d1b8ceb9c1012cd5fa059cb705dfef8d8c795b.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_6babebfdede0bf700b3d47a87cbd4f9eb9964928.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-common/9.4.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="34762013d39dbe6c656050589c44e8b61b9a2c5d">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-auth-common-9.4.0_3d58cfab9ed6fc571aaa6e7634cbf74a24f7d380.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-applinks/1.4.0/8ad21bf21784dacce5f2043afb97218cc377e835/bolts-applinks-1.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/bolts-applinks-1.4.0_bd16076b509fb21517f59702eddae322e083b333.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.4.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="8a36d229011e75f0caef408e1adf0d3fd4d94e02">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-9.4.0_648b969c27f9612ee3b672a9590266ecc1aebccd.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.firebaseui/firebase-ui/0.5.3/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="fbed8999711c2ea4a32aebfb9541e9873b5a83ca">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.firebaseui-firebase-ui-0.5.3_dc872805d0979e701ca7ba62eea67e746e948fd3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-module/9.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="6bc41d9d6fd12d2ef23c785a259011001f4a1a5b">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-auth-module-9.4.0_b614b341550a8b8cbf0771148cc5113e5ac5708f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/.gradle/caches/modules-2/files-2.1/com.firebase/firebase-client-jvm/2.4.0/558e074f136fee609b8758480ecd00e286595137/firebase-client-jvm-2.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="558e074f136fee609b8758480ecd00e286595137">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/firebase-client-jvm-2.4.0_2c81a904473fca7a11ff959431a73fafce17a76a.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.firebaseui/firebase-ui-database/0.5.3/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="d729037ff4a83220d1f706356ff0dbe4b85e0d73">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.firebaseui-firebase-ui-database-0.5.3_28a5c01fc3333d00dfd2531a3d0e128bb13112f0.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth-base/9.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="58c9f5ee817fdb8b658fd7455fadfb74119f7ee9">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-auth-base-9.4.0_48232e916fe26008a12b39e20a7de8048f9b61bb.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/design/23.4.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.4.0_7e2f6b83cae04dcacf0e95eeb5b8aee73a208af8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.0/jars/libs/internal_impl-24.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.0_53a7da843853750308812e8d58f1caf4e5779126.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.0/support-annotations-24.2.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="6be858a75633b1f0a2d24cad740db57775cb6871">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/support-annotations-24.2.0_672ad31a4767a7d29fa7ae00e3c277c391282d73.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-24.2.0_7d24669e3d8906fa8a48e2629603e33395982ce3.jar" />
-    </item>
-    <item
         is-multidex="false"
         jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/jars/classes.jar"
         jumboMode="true"
@@ -437,352 +423,6 @@
         revision="24.0.2"
         sha1="3dee4ce5844d39d843d503fb8fe04e51e5bfffac">
         <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-9.4.0_7830a644f57f1c8f5e12feb32376d20c869b5137.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-module/9.4.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="6bc41d9d6fd12d2ef23c785a259011001f4a1a5b">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-auth-module-9.4.0_b614b341550a8b8cbf0771148cc5113e5ac5708f.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.0/jars/libs/internal_impl-24.2.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.0_ea45482aeafdb0b80fff60deffe4968e6f1fdb2f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.0/support-annotations-24.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="6be858a75633b1f0a2d24cad740db57775cb6871">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/support-annotations-24.2.0_672ad31a4767a7d29fa7ae00e3c277c391282d73.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.0/jars/libs/internal_impl-24.2.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.0_53a7da843853750308812e8d58f1caf4e5779126.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="f3ee23ef25c9a8fe3d40246d0b7097267963a612">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.2.0_1048559616335141be2be66163fc32218b96014b.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.2.2/3c8f6018eaa72d43b261181e801e6f8676c16ef6/jackson-databind-2.2.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="3c8f6018eaa72d43b261181e801e6f8676c16ef6">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/jackson-databind-2.2.2_c5742a13e139ebb34126b3482f7b7a8fc38e5672.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="0dc8ab07eeceda5e99b305c8069765056b6e5c9d">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-impl-9.0.0_7ff030004203b9c9eeea78c3c12fb1cce35c8f12.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/.gradle/caches/modules-2/files-2.1/com.firebase/firebase-client-android/2.4.0/f00bc767918ad9c89e5c13e25706d033a58e13c2/firebase-client-android-2.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="f00bc767918ad9c89e5c13e25706d033a58e13c2">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/firebase-client-android-2.4.0_25ae00df6edfa793eb3fc198e36fede19419ef89.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.0/jars/libs/internal_impl-24.2.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.0_f7fc4cb96a00e813e3c094a6ce14d54789fb0a66.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.firebaseui/firebase-ui-auth/0.5.3/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="4d1eef77feb4f5eb598bc3eed8b55c93f04f08e5">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.firebaseui-firebase-ui-auth-0.5.3_6c05154e0476a36ee76c29b7657882b5670e9180.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.4.0_e83b58b6decd38ac53e87beaaae15889ddd31c99.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.4.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="618485fef3ebe12127f7622abbc9b5b39057b5c2">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-9.4.0_c82daac779e28b097ab78a2f2882c52b7707cc0d.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.0/jars/libs/internal_impl-24.2.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="045be695d968dd707691cc55d23746dbf8cf569a">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.0_2efc06c2d3bb632fe43bf040fd1f16d2dee9abf1.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/.gradle/caches/modules-2/files-2.1/com.firebase/tubesock/0.0.12/6ec0bbd3e161a73ed672284b587fd32309a86d7a/tubesock-0.0.12.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="6ec0bbd3e161a73ed672284b587fd32309a86d7a">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/tubesock-0.0.12_4a037d01fdbc0fe677c4161e590e3e26157b6dd4.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.4.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="d9ecde39b460470e655de6e47c05573d2d5a8bfb">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-23.4.0_df799c58cae06f2d89ed1810924511933b64e607.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.2.2/d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b/jackson-core-2.2.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/jackson-core-2.2.2_9275f53d86937f1d18ff5b90cd685bbda0f8b8d3.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/customtabs/23.4.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="2d1eaa9e0b98f8fc4c2b989d9b30d4f1480648ac">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-customtabs-23.4.0_ca3aabfe0dc3ffa56286ea4a8930a7f4e8bba293.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="ea4b54dcbfe5ac05efb0a314105f07258118d3a7">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-iid-9.0.0_31d4895e78497458a40affdd28cb03bb708f253c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-24.2.0_57831301aa8d610e96a638219e4cbd7922d068ef.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-24.2.0_57831301aa8d610e96a638219e4cbd7922d068ef.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="9dcd44201e8399378b5a473645829823e9324913">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_5683a84f9c3df3da063b0a1d22d6a48f5e798e7b.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="3dee4ce5844d39d843d503fb8fe04e51e5bfffac">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-9.4.0_7830a644f57f1c8f5e12feb32376d20c869b5137.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.firebaseui/firebase-ui-database/0.5.3/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="d729037ff4a83220d1f706356ff0dbe4b85e0d73">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.firebaseui-firebase-ui-database-0.5.3_28a5c01fc3333d00dfd2531a3d0e128bb13112f0.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.firebaseui/firebase-ui/0.5.3/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="fbed8999711c2ea4a32aebfb9541e9873b5a83ca">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.firebaseui-firebase-ui-0.5.3_dc872805d0979e701ca7ba62eea67e746e948fd3.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="45f5eda279825ff470e3f51019d374d1ef61e000">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.2.0_cf4523be3fee54134c2f0143c6ad2b52830cef54.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/9.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="0e4d53465cc141bec58f18a894e4c4e80633fa32">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-database-connection-9.4.0_edc318baa37b459a779abe289a3785c87e100945.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="f9b41622897665678d31d78e57a361cb0cebcb0d">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-24.2.0_7d669724140bc083daf1a0af02b08f3088d9b4b9.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth-base/9.4.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="58c9f5ee817fdb8b658fd7455fadfb74119f7ee9">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-auth-base-9.4.0_48232e916fe26008a12b39e20a7de8048f9b61bb.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.14.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="42a3ae86dd3ae2876d3e95c2e6e104ae57a50a65">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-android-sdk-4.14.1_5ad820315caa3d21985946ad4d229e75918591b9.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-24.2.0_eb5024345395ad1885a9c45f2280d40aab781551.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/9.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="4348dd26d83b56c2058b768222c3271bce911724">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-auth-9.4.0_42b2451c13c6057d31f0db4420c9d68f2c09cba4.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/design/23.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.4.0_7e2f6b83cae04dcacf0e95eeb5b8aee73a208af8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/9.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="84bf369090a8f7e293817efbd6ccf31ada1be32b">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-database-9.4.0_90d1b8ceb9c1012cd5fa059cb705dfef8d8c795b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-applinks/1.4.0/8ad21bf21784dacce5f2043afb97218cc377e835/bolts-applinks-1.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/bolts-applinks-1.4.0_bd16076b509fb21517f59702eddae322e083b333.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="4ef8ab5fee042023018249474bc93bd4b2b9c17e">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-9.0.0_691854f767acae7b5725b074966eb8f6a0a145a6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="8a36d229011e75f0caef408e1adf0d3fd4d94e02">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-9.4.0_648b969c27f9612ee3b672a9590266ecc1aebccd.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/libs/internal_impl-24.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="6e02e34594ebe9c0501ffda8dd48497f81b82977">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.0_66c77e2a6c5a70c71f3232d84db3abd0619845fe.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.2.2/285cb9c666f0f0f3dd8a1be04e1f457eb7b15113/jackson-annotations-2.2.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="285cb9c666f0f0f3dd8a1be04e1f457eb7b15113">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/jackson-annotations-2.2.2_3205bd1b3f3c66df996b85aea88a2f89113adaf9.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-24.2.0_ef77298fbb217ab5ac5d0b96a3c7a7fc433d41c8.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.4.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="18b5697c65c4fe5b7381613b8b8ae9ac52e26fa7">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-common-9.4.0_dd25bb372dc53b1943b0c60a00ca2ceeae3c9444.jar" />
-    </item>
-    <item
-        jar="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="c3c638be6e650b165ab9ae144857b64e82787fad">
-        <dex dex="/Users/chantome/AndroidStudioProjects/toulouse-0916-wildoldschool/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.2.0_9c2a2cbc8290318dc9954a687ced49d912ddffbc.jar" />
     </item>
 
 </items>
