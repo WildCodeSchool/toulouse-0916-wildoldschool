@@ -60,7 +60,7 @@ public class AuthActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(!task.isSuccessful()){
                                 //Log.i(TAG,"Erreur d'authentification..");
-                                editEmail.setError("Email ou mot de passe incorrect !");
+                                //editEmail.setError("Email ou mot de passe incorrect !");
                                 TextView textViewToChange = (TextView) findViewById(R.id.error);
                                 textViewToChange.setText("Email ou mot de passe incorrect !");
                                 textViewToChange.setVisibility(View.VISIBLE);
@@ -80,7 +80,6 @@ public class AuthActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent2 = new Intent(AuthActivity.this, SignupActivity.class);
                 startActivity(intent2);
-                finish();
             }
         });
 

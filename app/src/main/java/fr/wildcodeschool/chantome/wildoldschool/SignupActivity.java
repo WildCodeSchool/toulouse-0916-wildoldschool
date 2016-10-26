@@ -31,9 +31,11 @@ public class SignupActivity extends AppCompatActivity {
     private Button btnSignIn, btnSignUp;
     //private ProgressBar progressBar;
     private FirebaseAuth mAuth;
+    boolean find = true;
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference myRef = database.getReference();
     private String pseudo,email,password;
+    User monUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,8 @@ public class SignupActivity extends AppCompatActivity {
         inputPassword = (EditText) findViewById(R.id.password);
         inputPseudo = (EditText) findViewById(R.id.pseudo);
         //progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
+
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,31 +81,50 @@ public class SignupActivity extends AppCompatActivity {
 
                 //progressBar.setVisibility(View.VISIBLE);
                 //creation utilisateur
-                mAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(SignupActivity.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (!task.isSuccessful()) {
-                                    Toast.makeText(SignupActivity.this, "Création erreur!",
-                                            Toast.LENGTH_SHORT).show();
-                                    TextView textViewToChange = (TextView) findViewById(R.id.error);
-                                    textViewToChange.setText("l'utilisateur "+email+" existe dejà");
-                                    textViewToChange.setVisibility(View.VISIBLE);
-                                } else {
-                                    Toast.makeText(SignupActivity.this, "Création réussi!! ",
-                                            Toast.LENGTH_SHORT).show();
+                myRef.child("pseudos").child(pseudo).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if(dataSnapshot.exists()){
+                            Log.i(TAG,"Pseudo "+dataSnapshot.getKey().toString()+" existant !!");
+                            TextView textViewToChange = (TextView) findViewById(R.id.error);
+                            textViewToChange.setText("le pseudo '"+pseudo+"' existe dejà");
+                            textViewToChange.setVisibility(View.VISIBLE);
+                            return;
+                        }else{
+                            Log.i(TAG,"Pseudo non existant !!");
+                            mAuth.createUserWithEmailAndPassword(email, password)
+                                    .addOnCompleteListener(SignupActivity.this, new OnCompleteListener<AuthResult>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<AuthResult> task) {
+                                            if (!task.isSuccessful()) {
+                                                Toast.makeText(SignupActivity.this, "Création erreur!",
+                                                        Toast.LENGTH_SHORT).show();
+                                                TextView textViewToChange = (TextView) findViewById(R.id.error);
+                                                textViewToChange.setText("l'utilisateur "+email+" existe dejà");
+                                                textViewToChange.setVisibility(View.VISIBLE);
+                                            } else {
+                                                String Uid = mAuth.getCurrentUser().getUid();
+                                                Log.i(TAG,"UID : "+Uid);
+                                                monUser = new User(pseudo,true);
 
-                                    String Uid = mAuth.getCurrentUser().getUid();
-                                    Log.i(TAG,"UID : "+Uid);
-                                    User monUser = new User(pseudo,true);
-                                    myRef.child("users").child(Uid).setValue(monUser);
-                                    Log.i(TAG,"Utilisateur ajouté !!");
-                                    startActivity(new Intent(SignupActivity.this, AuthActivity.class));
-                                    finish();
-                                }
-                            }
-                        });
+                                                myRef.child("users").child(Uid).setValue(monUser);
+                                                myRef.child("pseudos").child(pseudo).setValue(Uid);
+                                                Toast.makeText(SignupActivity.this, "Création réussi!! ",
+                                                        Toast.LENGTH_SHORT).show();
+                                                Log.i(TAG,"Utilisateur ajouté !!");
+                                                startActivity(new Intent(SignupActivity.this, AuthActivity.class));
+                                                finish();
+                                            }
+                                        }
+                                    });
+                        }
+                    }
 
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Log.i(TAG,databaseError.getMessage().toString());
+                    }
+                });
             }
         });
     }
