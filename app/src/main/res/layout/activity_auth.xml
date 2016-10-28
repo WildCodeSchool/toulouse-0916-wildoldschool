@@ -9,8 +9,12 @@
 
     <TextView
         android:text=""
+        android:visibility="gone"
+        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:background="#E0001A"
+        android:textColor="#FFFFFF"
         android:id="@+id/error" />
 
     <ImageView
@@ -49,7 +53,7 @@
         android:id="@+id/connect"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-       android:background="@android:color/transparent"
+        android:background="@android:color/transparent"
         android:text="Connection"
         android:layout_below="@id/password"
         android:textColor="@android:color/white"

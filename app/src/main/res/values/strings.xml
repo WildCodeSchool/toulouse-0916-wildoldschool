@@ -1,8 +1,20 @@
 <resources>
-    <string name="app_name">Wild Old School
-    </string>
+    <string name="app_name">Wild Old School</string>
 
 
+    <string-array name="array_schools">
+        <item>Toulouse</item>
+        <item>Laloupe</item>
+        <item>Orléan</item>
+        <item>Lyon</item>
+        <item>Bordeaux</item>
+    </string-array>
+
+    <string-array name="array_formations">
+        <item>Android</item>
+        <item>PHP</item>
+        <item>Javascript</item>
+    </string-array>
 
     <string name="action_sign_in_short">Register</string>
     <string name="email">Email</string>

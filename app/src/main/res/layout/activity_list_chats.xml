@@ -35,8 +35,6 @@
         android:layout_gravity="top"
         android:weightSum="1">
 
-
-
         <ListView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -60,7 +58,6 @@
             android:text="Déconnexion"
             android:textColor="#FFFFFF"/>
 
-
         <Button
             android:layout_marginBottom="10dp"
             android:layout_gravity="right"
@@ -73,7 +70,6 @@
             android:text="+"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true" />
-
 
     </RelativeLayout>
 

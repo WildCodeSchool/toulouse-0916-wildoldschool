@@ -106,13 +106,10 @@ public class SignupActivity extends AppCompatActivity {
                                                 String Uid = mAuth.getCurrentUser().getUid();
                                                 Log.i(TAG,"UID : "+Uid);
                                                 monUser = new User(pseudo,true);
-
                                                 myRef.child("users").child(Uid).setValue(monUser);
                                                 myRef.child("pseudos").child(pseudo).setValue(Uid);
-                                                Toast.makeText(SignupActivity.this, "Création réussi!! ",
-                                                        Toast.LENGTH_SHORT).show();
                                                 Log.i(TAG,"Utilisateur ajouté !!");
-                                                startActivity(new Intent(SignupActivity.this, AuthActivity.class));
+                                                startActivity(new Intent(SignupActivity.this, CategoriesActivity.class));
                                                 finish();
                                             }
                                         }

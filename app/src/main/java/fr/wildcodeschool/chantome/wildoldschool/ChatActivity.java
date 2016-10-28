@@ -42,7 +42,6 @@ public class ChatActivity extends AppCompatActivity{
 
     private DatabaseReference rootChat,rootChatMessages,rootChatMessage;
     private String TAG = "WOS-Chat";
-    private RecyclerView chatMessages;
     private EditText editMessage;
     private Button send;
     private String monChat, monMessage,temp_key;
@@ -75,7 +74,7 @@ public class ChatActivity extends AppCompatActivity{
         monChat = (String) getIntent().getStringExtra("chatKey");
         rootChat = FirebaseDatabase.getInstance().getReference().child("chats").child(monChat);
         rootChatMessages = rootChat.child("messages");
-        chatMessages = (RecyclerView) findViewById(R.id.conversation);
+        recycler = (RecyclerView) findViewById(R.id.conversation);
         editMessage = (EditText) findViewById(R.id.send_message);
         send = (Button) findViewById(R.id.send);
         introText = (TextView) findViewById(R.id.intro);
@@ -102,7 +101,6 @@ public class ChatActivity extends AppCompatActivity{
         mLayoutManager = new LinearLayoutManager(ChatActivity.this);
         //mLayoutManager.setReverseLayout(true);
         mLayoutManager.setStackFromEnd(true);
-        recycler = (RecyclerView) findViewById(R.id.conversation);
         recycler.setHasFixedSize(true);
         recycler.setLayoutManager(mLayoutManager);
 
@@ -119,21 +117,20 @@ public class ChatActivity extends AppCompatActivity{
                 authorName = groupUsers.get(author);
                 message = model.getMessage().toString();
 
-
-
                 if(!authorName.isEmpty() && !message.isEmpty()){
                     long dv = Long.valueOf(model.getCreated_on().toString());// date value
                     Date df = new java.util.Date(dv);//date format
                     String vv = new SimpleDateFormat("dd/MM/yyyy - HH:mm").format(df);
-                    viewHolder.time.setText(vv);
 
-                    if(author == currentId){
+                    if(author.equals(currentId)){
                         //Log.i(TAG,"MOI");
+                        viewHolder.time.setText(vv);
                         viewHolder.userL.setText(authorName);
                         viewHolder.messageR.setText(message);
                         viewHolder.linear1.setVisibility(View.GONE);
                     }else{
                         //Log.i(TAG,"PAS MOI");
+                        viewHolder.time.setText(vv);
                         viewHolder.userR.setText(authorName);
                         viewHolder.messageL.setText(message);
                         viewHolder.linear2.setVisibility(View.GONE);
@@ -142,9 +139,7 @@ public class ChatActivity extends AppCompatActivity{
                     authorName="";
                     message="";
                 }
-
                 recycler.scrollToPosition(mAdapter.getItemCount());
-
             }
         };
 
@@ -160,28 +155,27 @@ public class ChatActivity extends AppCompatActivity{
                 if (monMessage.isEmpty()){
                     editMessage.setError("vide");
                     return;
+                }else{
+                    //Tableau temporaire des clés messages
+                    Map<String,Object> map = new HashMap<String, Object>();
+                    temp_key = rootChatMessages.push().getKey().toString();
+                    rootChatMessages.updateChildren(map);
+
+                    tsLong = System.currentTimeMillis();
+                    monTs = tsLong.toString();
+
+                    rootChatMessage = rootChatMessages.child(temp_key);
+                    theMessage = new Message(currentId,monMessage,monTs);
+                    rootChatMessage.setValue(theMessage);
+                    //Log.i(TAG,"c'est bon..");
+
+                    //Efface le text du champs message aprés l'envoi de celui-ci
+                    //recycler.scrollToPosition(mAdapter.getItemCount());
+                    editMessage.setText("");
+                    //Log.i(TAG,"on nettoit..");
                 }
-
-                //Tableau temporaire des clés messages
-                Map<String,Object> map = new HashMap<String, Object>();
-                temp_key = rootChatMessages.push().getKey().toString();
-                rootChatMessages.updateChildren(map);
-
-                tsLong = System.currentTimeMillis();
-                monTs = tsLong.toString();
-
-                rootChatMessage = rootChatMessages.child(temp_key);
-                theMessage = new Message(currentId,monMessage,monTs);
-                rootChatMessage.setValue(theMessage);
-                //Log.i(TAG,"c'est bon..");
-
-                //Efface le text du champs message aprés l'envoi de celui-ci
-                recycler.scrollToPosition(mAdapter.getItemCount());
-                editMessage.setText("");
-                //Log.i(TAG,"on nettoit..");
             }
         });
-
     }
 
     private static class MessageViewHolder extends RecyclerView.ViewHolder {
@@ -265,14 +259,12 @@ public class ChatActivity extends AppCompatActivity{
         finish();
     }
 
-    @Override
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.navbar, menu);
         return true;
     }
 
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_chats:
@@ -285,6 +277,9 @@ public class ChatActivity extends AppCompatActivity{
             case R.id.action_profil:
                 // User chose the "Favorite" action, mark the current item
                 // as a favorite...
+                Intent profileIntent = new Intent(ChatActivity.this,ProfileActivity.class);
+                startActivity(profileIntent);
+                finish();
                 return true;
 
             default:
