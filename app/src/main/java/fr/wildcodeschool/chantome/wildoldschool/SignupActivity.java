@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,7 +16,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,7 +26,7 @@ public class SignupActivity extends AppCompatActivity {
 
     private EditText inputEmail, inputPassword, inputPseudo;
     private final String TAG = "WOS-SignUp";
-    private Button btnSignIn, btnSignUp;
+    private Button retour, btnSignUp;
     //private ProgressBar progressBar;
     private FirebaseAuth mAuth;
     boolean find = true;
@@ -37,6 +35,7 @@ public class SignupActivity extends AppCompatActivity {
     private String pseudo,email,password;
     User monUser;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +43,7 @@ public class SignupActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         btnSignUp = (Button) findViewById(R.id.sign_up_button);
+        retour = (Button) findViewById(R.id.retourbtn);
         inputEmail = (EditText) findViewById(R.id.email);
         inputPassword = (EditText) findViewById(R.id.password);
         inputPseudo = (EditText) findViewById(R.id.pseudo);
@@ -127,6 +127,7 @@ public class SignupActivity extends AppCompatActivity {
                 });
             }
         });
+
     }
 
     @Override
@@ -134,4 +135,6 @@ public class SignupActivity extends AppCompatActivity {
         super.onResume();
         //progressBar.setVisibility(View.GONE);
     }
+
+
 }

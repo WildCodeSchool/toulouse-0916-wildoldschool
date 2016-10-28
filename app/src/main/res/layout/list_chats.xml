@@ -11,7 +11,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:id="@+id/imageView"
-        android:background="@drawable/btnenvoi"
+        android:background="@drawable/imagechat"
         />
 
     <TextView
