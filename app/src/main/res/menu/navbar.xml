@@ -3,15 +3,19 @@
 
     <!-- "Mark Favorite", should appear as action button if possible -->
     <item
+        app:titleTextColor="@android:color/white"
         android:id="@+id/action_chats"
-        android:icon="@drawable/btn_chat"
+        android:icon="@drawable/icone_chat"
         android:title="Chats"
         app:showAsAction="ifRoom"/>
 
     <!-- Settings, should always be in the overflow -->
-    <item android:id="@+id/action_profil"
-        android:icon="@drawable/btn_user"
+    <item
+        android:id="@+id/action_profil"
+        android:icon="@drawable/icon_user"
         android:title="Profil"
         app:showAsAction="ifRoom"/>
+
+
 
 </menu>
