@@ -22,7 +22,7 @@
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#1EA798"
+        android:background="@color/colorBlue"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
@@ -51,18 +51,25 @@
         >
 
         <Button
+            android:id="@+id/deco"
+            android:layout_width="30dp"
+            android:layout_marginLeft="5dp"
+            android:layout_height="10dp"
+            android:text="Déconnexion"
+            android:textColor="#FFFFFF"/>
+
+        <Button
             android:layout_marginBottom="10dp"
             android:layout_gravity="right"
             android:id="@+id/create_chat"
-            android:layout_width="54dp"
+            android:layout_width="40dp"
             android:background="@drawable/btnenvoi"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_marginRight="5dp"
             android:textColor="@android:color/white"
             android:text="+"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true" />
-
 
     </RelativeLayout>
 

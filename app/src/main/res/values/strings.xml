@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Wild Old School</string>
 
+
     <string-array name="array_schools">
         <item>Toulouse</item>
         <item>Laloupe</item>
@@ -14,7 +15,6 @@
         <item>PHP</item>
         <item>Javascript</item>
     </string-array>
-
 
     <string name="action_sign_in_short">Register</string>
     <string name="email">Email</string>
@@ -46,8 +46,6 @@
     <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
     <string name="Wildsenger">WildSenger</string>
     <string name="User_name">Pseudo</string>
-
-
 
 
 </resources>
