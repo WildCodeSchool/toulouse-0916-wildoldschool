@@ -41,9 +41,9 @@ import java.util.Map;
  */
 public class ListChatsActivity extends AppCompatActivity{
     private String chatName,chatDesc,temp_key,current_id, userkey,chatKey,meh;
-    private Button createBtn, btnDeco;
+    private Button createBtn, btnDeco, btnCat;
     private FirebaseAuth Auth;
-    private Intent mainActivite;
+    private Intent mainActivite,chatActivite;
     private View v_iew;
     private boolean status = true;
     private boolean access;
@@ -55,7 +55,6 @@ public class ListChatsActivity extends AppCompatActivity{
     private Map<String,String> groupUsers = new HashMap<String,String>();
     private DatabaseReference root = FirebaseDatabase.getInstance().getReference().getRoot();
     private DatabaseReference rootChats = FirebaseDatabase.getInstance().getReference().child("chats");
-    private int count;
     private ListView list;
     private Long tsLong;
     private String ts;
@@ -71,7 +70,6 @@ public class ListChatsActivity extends AppCompatActivity{
         createBtn = (Button) findViewById(R.id.create_chat);
         btnDeco = (Button) findViewById(R.id.deco);
         list = (ListView) findViewById(R.id.list_chats);
-        count=0;
         current_id = Auth.getCurrentUser().getUid().toString();
 
         myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
@@ -135,7 +133,7 @@ public class ListChatsActivity extends AppCompatActivity{
                 rootChats.child(chatKeys.get(position).toString()).child("groupUser").child(current_id).setValue(users.get(current_id).getPseudo().toString());
 
                 //Envoi ma clé de chat selectionné vers l'activité details
-                Intent chatActivite = new Intent(ListChatsActivity.this, ChatActivity.class);
+                chatActivite = new Intent(ListChatsActivity.this, ChatActivity.class);
                 Bundle mBundle = new Bundle();
                 mBundle.putString("chatKey",chatKeys.get(position).toString());
                 chatActivite.putExtras(mBundle);
@@ -148,19 +146,6 @@ public class ListChatsActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 addNewChat();
-            }
-        });
-
-        //Déconnexion de l'utilisateur
-        btnDeco.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Log.i(TAG,"Merci Tchusss..");
-                //users.get(current_id).setOnline(false);
-                Auth.signOut();
-                mainActivite = new Intent(ListChatsActivity.this, MainActivity.class);
-                startActivity(mainActivite);
-                finish();
             }
         });
     }
@@ -357,6 +342,9 @@ public class ListChatsActivity extends AppCompatActivity{
             case R.id.action_profil:
                 // User chose the "Favorite" action, mark the current item
                 // as a favorite...
+                Intent profileIntent = new Intent(ListChatsActivity.this,ProfileActivity.class);
+                startActivity(profileIntent);
+                finish();
                 return true;
 
             default:

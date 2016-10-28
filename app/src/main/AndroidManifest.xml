@@ -21,6 +21,8 @@
         <activity android:name=".ListChatsActivity" />
         <activity android:name=".ChatActivity" />
         <activity android:name=".SignupActivity" />
+        <activity android:name=".CategoriesActivity"/>
+        <activity android:name=".ProfileActivity"/>
     </application>
 
 </manifest>

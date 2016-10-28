@@ -1,6 +1,7 @@
 package fr.wildcodeschool.chantome.wildoldschool;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -11,11 +12,11 @@ public class User{
     private String firstname;//*
     private String lastname;//*
     private String pseudo;
-    private String genre;//*
-    private int age;
+    private boolean genre;//*
+    private String birthday;
     private String desc;
     private int photo;
-    private int categorie;
+    private String favories="0";
     private Date created_on;
     private boolean online;
     private boolean writing;
@@ -23,7 +24,7 @@ public class User{
     private Map<String,Chat> created_chats;
     private Map<String,String> list_added_chats;
     private String adresse;
-    private String ecole_wcs;
+    private String school;
     private String formation;
 
     public User(){
@@ -35,6 +36,29 @@ public class User{
 
     public User(String pseudo, boolean online){
         setPseudo(pseudo);
+        setOnline(online);
+    }
+
+    public User(String pseudo,
+                String firstname,
+                String lastname,
+                String descriptif,
+                String birthday,
+                String school,
+                String formation,
+                String favories,
+                boolean genre,
+                boolean online
+    ){
+        setPseudo(pseudo);
+        setFirstname(firstname);
+        setLastname(lastname);
+        setDesc(descriptif);
+        setBirthday(birthday);
+        setSchool(school);
+        setFormation(formation);
+        setFavories(favories);
+        setGenre(genre);
         setOnline(online);
     }
 
@@ -53,12 +77,12 @@ public class User{
         this.lastname = lastname;
     }
 
-    public void setGenre(String genre) {
+    public void setGenre(boolean genre) {
         this.genre = genre;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
 
     public void setDesc(String desc) {
@@ -69,8 +93,8 @@ public class User{
         this.photo = photo;
     }
 
-    public void setCategorie(int categorie) {
-        this.categorie = categorie;
+    public void setFavories(String favories) {
+        this.favories = favories;
     }
 
     public void setCreated_on(Date created_on) {
@@ -101,8 +125,8 @@ public class User{
         this.adresse = adresse;
     }
 
-    public void setEcole_wcs(String ecole_wcs) {
-        this.ecole_wcs = ecole_wcs;
+    public void setSchool(String school) {
+        this.school = school;
     }
 
     public void setFormation(String formation) {
@@ -125,12 +149,12 @@ public class User{
         return this.lastname;
     }
 
-    public String getGenre() {
+    public boolean isGenre() {
         return this.genre;
     }
 
-    public int getAge() {
-        return this.age;
+    public String getBirthday() {
+        return this.birthday;
     }
 
     public String getDesc() {
@@ -141,8 +165,8 @@ public class User{
         return this.photo;
     }
 
-    public int getCategorie() {
-        return this.categorie;
+    public String getFavories() {
+        return this.favories;
     }
 
     public Date getCreated_on() {
@@ -173,8 +197,8 @@ public class User{
         return this.adresse;
     }
 
-    public String getEcole_wcs() {
-        return this.ecole_wcs;
+    public String getSchool() {
+        return this.school;
     }
 
     public String getFormation() {
