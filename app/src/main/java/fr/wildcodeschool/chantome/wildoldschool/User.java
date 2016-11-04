@@ -8,24 +8,22 @@ import java.util.Map;
  * Created by chantome on 22/09/2016.
  */
 public class User{
-    private String email;
-    private String firstname;//*
-    private String lastname;//*
-    private String pseudo;
-    private boolean genre;//*
-    private String birthday;
-    private String desc;
-    private int photo;
+    private String firstname="";//*
+    private String lastname="";//*
+    private String pseudo="";
+    private boolean genre=false;//*
+    private String birthday="";
+    private String desc="";
+    private int photo=0;
     private String favories="0";
     private Date created_on;
-    private boolean online;
-    private boolean writing;
-    private int profil_complete;
+    private boolean online=false;
+    private boolean writing=false;
+    private int profil_complete=0;
     private Map<String,Chat> created_chats;
     private Map<String,String> list_added_chats;
-    private String adresse;
-    private String school;
-    private String formation;
+    private String school="";
+    private String formation="";
 
     public User(){
     }
@@ -63,10 +61,6 @@ public class User{
     }
 
     //setter
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
@@ -121,10 +115,6 @@ public class User{
         this.list_added_chats = list_added_chats;
     }
 
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
-    }
-
     public void setSchool(String school) {
         this.school = school;
     }
@@ -134,11 +124,6 @@ public class User{
     }
 
     //getter
-
-    public String getEmail() {
-        return this.email;
-    }
-
     public String getFirstname() {
         return this.firstname;
     }
@@ -191,10 +176,6 @@ public class User{
 
     public Map<String, String> getList_added_chats() {
         return this.list_added_chats;
-    }
-
-    public String getAdresse() {
-        return this.adresse;
     }
 
     public String getSchool() {

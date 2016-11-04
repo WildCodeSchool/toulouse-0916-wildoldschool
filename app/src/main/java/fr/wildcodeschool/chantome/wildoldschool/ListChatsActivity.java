@@ -18,12 +18,13 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
-
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
@@ -31,6 +32,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,14 +41,14 @@ import java.util.Map;
 /**
  * Created by chantome on 27/09/2016.
  */
-public class ListChatsActivity extends AppCompatActivity{
-    private String chatName,chatDesc,temp_key,current_id, userkey,chatKey,meh;
-    private Button createBtn, btnDeco, btnCat;
+public class ListChatsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+    private String chatName,chatDesc="",temp_key,current_id, userkey,chatKey,author;
+    private Button createBtn;
     private FirebaseAuth Auth;
-    private Intent mainActivite,chatActivite;
+    private Intent chatActivite;
     private View v_iew;
     private boolean status = true;
-    private boolean access;
+    private boolean access = false;
     private static final String TAG = "WOS-ListChats";
     private User user;
     private Map<String ,User> users = new HashMap<String,User>();
@@ -55,76 +57,78 @@ public class ListChatsActivity extends AppCompatActivity{
     private Map<String,String> groupUsers = new HashMap<String,String>();
     private DatabaseReference root = FirebaseDatabase.getInstance().getReference().getRoot();
     private DatabaseReference rootChats = FirebaseDatabase.getInstance().getReference().child("chats");
+    private DatabaseReference rootProfil;
     private ListView list;
     private Long tsLong;
-    private String ts;
+    private String ts,formation;
     Toolbar myToolbar;
-    private String title;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_chats);
 
+        //AUTH FIREBASE INIT
+        Auth = FirebaseAuth.getInstance();
+
+        //BUTTON
+        createBtn = (Button) findViewById(R.id.create_chat);
+        //LIST
+        list = (ListView) findViewById(R.id.list_chats);
+        //USER ID
+        current_id = Auth.getCurrentUser().getUid().toString();
+        //FIREBASE REF
+        rootProfil = FirebaseDatabase.getInstance().getReference().child("users").child(current_id);
+        //TOOLBAR
+        myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+
+        //Set toolbar background color
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(Color.parseColor("#149988"));
         }
 
-
-        Log.i(TAG,"Bienvenu..qu'est ce qu'on vous sert ?");
-
-        Auth = FirebaseAuth.getInstance();
-        createBtn = (Button) findViewById(R.id.create_chat);
-        btnDeco = (Button) findViewById(R.id.deco);
-        list = (ListView) findViewById(R.id.list_chats);
-        current_id = Auth.getCurrentUser().getUid().toString();
-
-        myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(myToolbar);
-
-        //Ajoute mes Utilisateur et mes clé de chat dans une Collection
+        //Get users and chats keys in collections
         getUsers();
         getChatKeys();
 
-        //liste chats
+        //list public chats
         FirebaseListAdapter<Chat> fireadapter = new FirebaseListAdapter<Chat>(
                 ListChatsActivity.this,
                 Chat.class,
                 R.layout.list_chats,
-                rootChats.orderByChild("status").equalTo(true)//ICI
+                rootChats.orderByChild("access").equalTo(false)//ICI
         ) {
             @Override
             protected void populateView(View v, Chat model, int position) {
-                //Log.i(TAG, "populateView..");
-                //Log.i(TAG, "Chat key.."+chatKeys.get(position).toString());
 
-                //Je veux afficher que mes chats PUBLIQUE
+                //Get INFOS CHAT INIT
                 String monName = (String) model.getName().toString();
                 String monAuthor = (String) model.getAuthor().toString();
                 String maDesc = (String) model.getDesc().toString();
+                String maFormation = (String) model.getCategorieChat().toString();
                 boolean monStatus = Boolean.valueOf(model.isStatus());
                 boolean monAccess = Boolean.valueOf(model.isAccess());
 
                 Map<String, String> monGroupUser = new HashMap<String, String>();
                 monGroupUser = model.getGroupUser();
-                //Log.i(TAG, "Données récupérer.. on fait quoi maintenant ?..");
-
+                //Get chat creation timestamp
                 String monTs = (String) model.getCreated_on().toString();
-                //Log.i(TAG,"monTS = "+monTs);
 
-                Chat monChat = new Chat(monName, monAuthor, maDesc, monStatus, monAccess, monGroupUser,monTs);
+                Chat monChat = new Chat(monName, monAuthor, maDesc, maFormation, monStatus, monAccess, monGroupUser,monTs);
 
-                //Log.i(TAG, "J'ajoute mon Chat dans ma Collection de chats..");
+                //add chat on collection
                 mesChats.add(monChat);
 
+                //TEXTVIEW
                 TextView txtName = (TextView) v.findViewById(R.id.chat_name);
-                TextView txtDesc = (TextView) v.findViewById(R.id.chat_desc);
+                TextView txtFav = (TextView) v.findViewById(R.id.chat_fav);
 
+                //Set content
                 txtName.setText(model.getName().toString());
-                txtDesc.setText(model.getDesc().toString());
-                //Log.i(TAG, "Et on envoi ! Next !?");
+                txtFav.setText(model.getCategorieChat().toString());
             }
         };
 
@@ -133,24 +137,19 @@ public class ListChatsActivity extends AppCompatActivity{
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //Log.i(TAG,"onItemClick..");
-                //Log.i(TAG,"ID.."+chatKeys.get(position).toString());
-                //verifier si l'utilisateur existe en base de donnée - a faire
-                //Log.i(TAG,users.get(current_id).getPseudo().toString());
-
-                //On ajout l'utilisateur dans le Group
+                //Add user on chat usersGroup
                 rootChats.child(chatKeys.get(position).toString()).child("groupUser").child(current_id).setValue(users.get(current_id).getPseudo().toString());
 
-                //Envoi ma clé de chat selectionné vers l'activité details
+                //go on conversation
                 chatActivite = new Intent(ListChatsActivity.this, ChatActivity.class);
                 Bundle mBundle = new Bundle();
                 mBundle.putString("chatKey",chatKeys.get(position).toString());
                 chatActivite.putExtras(mBundle);
                 startActivity(chatActivite);
-                //Log.i(TAG,"Direction le chat..");
             }
         });
 
+        //Button create chat
         createBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -159,25 +158,19 @@ public class ListChatsActivity extends AppCompatActivity{
         });
     }
 
+    //get chat key on collection
     public void getChatKeys(){
-        Log.i(TAG,"getChatKeys..");
         rootChats.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Log.i(TAG,"onChildAdded..");
                 chatKey = dataSnapshot.getKey().toString();
-                Log.i(TAG,"Ajouter la clé du chat dans une collection..");
                 chatKeys.add(chatKey);
-                Log.i(TAG,"Next..");
             }
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                Log.i(TAG,"onChildChanged..");
                 chatKey = dataSnapshot.getKey().toString();
-                Log.i(TAG,"Ajouter la clé du chat dans une collection..");
                 chatKeys.add(chatKey);
-                Log.i(TAG,"Next..");
             }
 
             @Override
@@ -197,36 +190,37 @@ public class ListChatsActivity extends AppCompatActivity{
         });
     }
 
+    //get users on collection
     public void getUsers(){
-        Log.i(TAG,"getUsers..");
+        //Log.i(TAG,"getUsers..");
 
         root.child("users").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Log.i(TAG,"onChildAdded..");
+                //Log.i(TAG,"onChildAdded..");
                 userkey = dataSnapshot.getKey().toString();
                 if(dataSnapshot.hasChildren()) {
                     user = new User(dataSnapshot.child("pseudo").getValue().toString());
                     users.put(userkey, user);
-                    Log.i(TAG,"Utilisateur ajouté dans la collection..");
+                    //Log.i(TAG,"Utilisateur ajouté dans la collection..");
                 }else{
-                    Log.i(TAG,"dataSnapshot vide..");
+                    //Log.i(TAG,"dataSnapshot vide..");
                 }
-                Log.i(TAG,"Next..");
+                //Log.i(TAG,"Next..");
             }
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                Log.i(TAG,"onChildChanged..");
+                //Log.i(TAG,"onChildChanged..");
                 userkey = dataSnapshot.getKey().toString();
                 if(dataSnapshot.hasChildren()) {
                     user = new User(dataSnapshot.child("pseudo").getValue().toString());
                     users.put(userkey, user);
-                    Log.i(TAG,"Utilisateur ajouté dans la collection..");
+                    //Log.i(TAG,"Utilisateur ajouté dans la collection..");
                 }else{
-                    Log.i(TAG,"dataSnapshot vide..");
+                    //Log.i(TAG,"dataSnapshot vide..");
                 }
-                Log.i(TAG,"Next..");
+                //Log.i(TAG,"Next..");
             }
 
             @Override
@@ -246,93 +240,91 @@ public class ListChatsActivity extends AppCompatActivity{
         });
     }
 
+    //create chat
     public void addNewChat(){
-
-        //Log.i(TAG,"Ajouter un chat..chargement du formulaire..");
-
+        //POPUP INIT
         AlertDialog.Builder builder = new AlertDialog.Builder(ListChatsActivity.this);
-
         builder.setTitle("Créer un chat");
-
-        //Log.i(TAG,"Jusqu'ici tout va bien !");
         LayoutInflater inflater = ListChatsActivity.this.getLayoutInflater();
-        //Log.i(TAG,"ATTENTION !");
-
         v_iew = inflater.inflate(R.layout.form_add_chat, null) ;
         builder.setView(v_iew);
 
+        //Button list formations
+        Spinner spinnerFormations = (Spinner) v_iew.findViewById(R.id.formations_spinner);
+        ArrayAdapter<CharSequence> adapterFormations = ArrayAdapter.createFromResource(ListChatsActivity.this,
+                R.array.array_formations, android.R.layout.simple_spinner_item);
+        adapterFormations.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerFormations.setAdapter(adapterFormations);
+        spinnerFormations.setOnItemSelectedListener(ListChatsActivity.this);
+
+        //Button OK POPUP
         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                //Log.i(TAG,"onClick..");
-                current_id = Auth.getCurrentUser().getUid();
 
+                //EDITTEXT
                 EditText editName, editDesc;
                 editName = (EditText) v_iew.findViewById(R.id.chat_name);
-                editDesc = (EditText) v_iew.findViewById(R.id.chat_desc);
+                //editDesc = (EditText) v_iew.findViewById(R.id.chat_desc);
 
+                //Get form content
                 chatName = editName.getText().toString();
-                chatDesc = editDesc.getText().toString();
+                //chatDesc = editDesc.getText().toString();
 
-                if(access){
-                    Log.i(TAG,"Le chat est en privé.");
-                }else{
-                    Log.i(TAG,"Le chat est en publique.");
-                }
-                //Tableau temporaire des clés messages
+                //Random key for chat
                 Map<String,Object> map = new HashMap<String, Object>();
                 temp_key = rootChats.push().getKey();
                 root.updateChildren(map);
 
-                //on ajout les variable dans le message qui a pour clé temp_key
+                //Set FIREBASE REF
                 DatabaseReference rootChat = rootChats.child(temp_key);
 
-                //Ajout de l'auteur dans le group
-                meh = users.get(current_id).getPseudo().toString();
-                groupUsers.put(current_id,meh);
+                //add author on collection
+                author = users.get(current_id).getPseudo().toString();
+                groupUsers.put(current_id,author);
 
+                //get current timestamp
                 tsLong = System.currentTimeMillis();
                 ts = tsLong.toString();
-                //Log.i(TAG,"Time : "+ts);
 
-                Chat monChat = new Chat(chatName,current_id,chatDesc,status,access,groupUsers,ts);
+                //add chat on database
+                Chat monChat = new Chat(chatName,current_id,chatDesc,formation,status,access,groupUsers,ts);
                 rootChat.setValue(monChat);
-                //Log.i(TAG,"Chat Crée..");
             }
         });
 
+        //Button cancel
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                //Log.i(TAG,"Bon tantpis..");
                 dialog.cancel();
             }
         });
 
-        //Log.i(TAG,"OUF ! On va afficher la vue");
+        //Build and show popup
         builder.create();
         builder.show();
-        //Log.i(TAG,"Rock & Roll !!!");
     }
 
+    /*
+    //Private chat checkboxe
     public void onCheckboxClicked(View view) {
-        // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
-        // Check which checkbox was clicked
         switch(view.getId()) {
             case R.id.checkbox_access:
                 if (checked){
-                    //Privé
+                    //Chat Privé
                     access = true;
                 }
                 else
                 {
-                    //Publique
+                    //Chat Publique
                     access = false;
                 }
                 break;
         }
     }
+    */
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -345,25 +337,28 @@ public class ListChatsActivity extends AppCompatActivity{
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_chats:
-                // User chose the "Settings" item, show the app settings UI...
                 return true;
 
             case R.id.action_profil:
-                // User chose the "Favorite" action, mark the current item
-                // as a favorite...
                 Intent profileIntent = new Intent(ListChatsActivity.this,ProfileActivity.class);
                 startActivity(profileIntent);
                 finish();
                 return true;
 
             default:
-                // If we got here, the user's action was not recognized.
-                // Invoke the superclass to handle it.
                 return super.onOptionsItemSelected(item);
-
-
-
         }
+    }
+
+    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+        // An item was selected. You can retrieve the selected item using
+        // parent.getItemAtPosition(pos)
+        formation = parent.getItemAtPosition(pos).toString();
+        Log.i(TAG,formation);
+    }
+
+    public void onNothingSelected(AdapterView<?> parent) {
+        // Another interface callback
     }
 
 }

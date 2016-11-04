@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
@@ -16,17 +14,7 @@
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
-    <TextView
-        android:text=""
-        android:visibility="gone"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#E0001A"
-        android:textColor="#FFFFFF"
-        android:id="@+id/error" />
-
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
@@ -34,7 +22,18 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <TextView
+            android:text=""
+            android:visibility="gone"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#E0001A"
+            android:textColor="#FFFFFF"
+            android:id="@+id/error" />
 
         <TextView
             android:layout_width="match_parent"
@@ -43,13 +42,12 @@
             android:textSize="30dp"
             android:gravity="center"/>
 
-
-      <ImageView
-          android:layout_marginTop="15dp"
-          android:layout_gravity="center"
-          android:layout_width="150dp"
-          android:layout_height="150dp"
-          android:background="@drawable/icon_user"/>
+        <ImageView
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/icon_user"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -67,7 +65,6 @@
 
             <TextView
                 android:id="@+id/txtPseudo"
-                android:text="Chantome"
                 android:textSize="17dp"
                 android:gravity="center_vertical"
                 android:layout_width="0dp"
@@ -83,7 +80,6 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:background="@drawable/icon"/>
-
 
         </LinearLayout>
 
@@ -102,7 +98,6 @@
 
             <TextView
                 android:id="@+id/txtLastname"
-                android:text="Chantome"
                 android:textSize="20dp"
                 android:gravity="center_vertical"
                 android:layout_width="0dp"
@@ -135,7 +130,6 @@
 
             <TextView
                 android:id="@+id/txtFirstname"
-                android:text="Benjamin"
                 android:textSize="20dp"
                 android:gravity="center_vertical"
                 android:layout_width="0dp"
@@ -149,14 +143,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:background="@drawable/icon"/>
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:layout_marginBottom="15dp"
-            >
+            android:layout_marginBottom="15dp">
 
             <TextView
                 android:layout_width="0dp"
@@ -168,7 +162,6 @@
 
             <TextView
                 android:id="@+id/txtGenre"
-                android:text="Homme"
                 android:textSize="17dp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -185,9 +178,6 @@
 
         </LinearLayout>
 
-
-
-
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -198,10 +188,16 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.8"
+                android:layout_weight="0.3"
                 android:textSize="17dp"
                 android:text="Date de naissance :"
                 android:gravity="center_vertical"/>
+
+            <TextView
+                android:id="@+id/txtBirthday"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"/>
 
             <ImageButton
                 android:layout_marginTop="5dp"
@@ -215,38 +211,31 @@
         </LinearLayout>
 
         <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp">
 
-            <TextView
-                android:id="@+id/date_label"
-                android:textSize="17dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Date courante :"
-                 />
-
-            <TextView
-                android:id="@+id/text_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp">
-
-            <TextView
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
                 android:layout_weight="0.8"
-                android:textSize="17dp"
-                android:text="Descriptif :"
-                android:gravity="center_vertical"/>
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="17dp"
+                    android:text="Descriptif :"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/txtDescriptif"
+                    android:paddingLeft="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
 
             <ImageButton
                 android:layout_marginTop="15dp"
@@ -265,19 +254,6 @@
             android:layout_marginBottom="15dp">
 
             <TextView
-                android:id="@+id/txtDescriptif"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp">
-
-            <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
@@ -287,7 +263,6 @@
 
             <TextView
                 android:id="@+id/txtSchool"
-                android:text="Wild Code School Toulouse"
                 android:textSize="18dp"
                 android:gravity="center_vertical"
                 android:layout_width="0dp"
@@ -320,7 +295,6 @@
 
             <TextView
                 android:id="@+id/txtFormation"
-                android:text="Android"
                 android:textSize="17dp"
                 android:gravity="center_vertical"
                 android:layout_width="0dp"
@@ -344,18 +318,34 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp">
 
-            <TextView
-                android:gravity="center_vertical"
-                android:text="Mes catégories favorites :"
-                android:textSize="17dp"
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.8"/>
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8">
+
+                <TextView
+                    android:gravity="center_vertical"
+                    android:text="Mes catégories favorites :"
+                    android:textSize="17dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+
+                <TextView
+                    android:id="@+id/txtFavories"
+                    android:textSize="15dp"
+                    android:paddingLeft="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
 
             <ImageButton
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="15dp"
                 android:contentDescription="bouton"
+                android:gravity="center"
                 android:id="@+id/modifFavories"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
@@ -363,14 +353,18 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/txtFavories"
-            android:text="Android, PHP, Ruby"
-            android:textSize="15dp"
-            android:paddingLeft="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
 
+
+        <Button
+            android:id="@+id/deco"
+            android:gravity="center"
+            android:text="Déconnexion"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#E0001A"
+            android:textColor="#FFFFFF"/>
 
     </LinearLayout>
     </ScrollView>

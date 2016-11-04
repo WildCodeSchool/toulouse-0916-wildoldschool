@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <ListView
-        android:id="@+id/list_cats"
+        android:id="@+id/list_favs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
