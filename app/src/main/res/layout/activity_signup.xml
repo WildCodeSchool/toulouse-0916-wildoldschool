@@ -24,29 +24,29 @@
         android:layout_gravity="center"
         android:layout_width="300px" />
 
-        <EditText
-            android:id="@+id/email"
-            android:layout_marginTop="60dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/email"
-            android:textColorHint="@android:color/white"
-            android:inputType="textEmailAddress"
-            android:textColor="@android:color/white"
-            android:textAlignment="center"/>
+    <EditText
+        android:id="@+id/email"
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/email"
+        android:textColorHint="@android:color/white"
+        android:inputType="textEmailAddress"
+        android:textColor="@android:color/white"
+        android:textAlignment="center"/>
 
 
-        <EditText
-            android:textAlignment="center"
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:focusableInTouchMode="true"
-            android:hint="@string/hint_password"
-            android:textColorHint="@android:color/white"
-            android:imeActionId="@+id/login"
-            android:inputType="textPassword"
-            android:textColor="@android:color/white" />
+    <EditText
+        android:textAlignment="center"
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
+        android:hint="@string/hint_password"
+        android:textColorHint="@android:color/white"
+        android:imeActionId="@+id/login"
+        android:inputType="textPassword"
+        android:textColor="@android:color/white" />
 
     <EditText
         android:textAlignment="center"
@@ -59,21 +59,18 @@
         android:textColor="@android:color/white"
         android:inputType="textPersonName"/>
 
-
-
-        <Button
-            android:id="@+id/sign_up_button"
-            style="?android:textAppearanceSmall"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@android:color/transparent"
-            android:text="Créer profil"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
+    <Button
+        android:id="@+id/sign_up_button"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:text="Créer profil"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
 
     <Button
-
         android:id="@+id/retourbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -83,6 +80,5 @@
         android:textColor="@android:color/white"
         android:textSize="15dp"
         android:layout_below="@id/connect" />
-    </LinearLayout>
 
-
+</LinearLayout>

@@ -1,19 +1,25 @@
 <resources>
     <string name="app_name">Wild Old School</string>
 
-
     <string-array name="array_schools">
         <item>Toulouse</item>
-        <item>Laloupe</item>
+        <item>La loupe</item>
         <item>Orléan</item>
         <item>Lyon</item>
         <item>Bordeaux</item>
+        <item>Chartres</item>
+        <item>Fontainebleau</item>
     </string-array>
 
     <string-array name="array_formations">
-        <item>Android</item>
         <item>PHP</item>
+        <item>Ruby</item>
         <item>Javascript</item>
+        <item>JAVA</item>
+        <item>UI/UX</item>
+        <item>Veille Tech.</item>
+        <item>Jobs</item>
+        <item>Android</item>
     </string-array>
 
     <string name="action_sign_in_short">Register</string>

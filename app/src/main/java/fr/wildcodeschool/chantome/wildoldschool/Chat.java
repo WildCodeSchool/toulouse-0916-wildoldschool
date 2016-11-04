@@ -14,7 +14,7 @@ public class Chat implements Serializable{
     private String author;
     private Map<String,String> groupUser;
     private Map<String,Message> messages;
-    private int categorieChat;
+    private String categorieChat="";
     private boolean status;
     private boolean access;
     private Date lastOpen;
@@ -25,10 +25,11 @@ public class Chat implements Serializable{
 
     }
 
-    public Chat(String name, String author,String desc, boolean status, boolean access, Map<String,String> groupUser,String created_on){
+    public Chat(String name, String author,String desc,String categorieChat, boolean status, boolean access, Map<String,String> groupUser,String created_on){
         setName(name);
         setAuthor(author);
         setDesc(desc);
+        setCategorieChat(categorieChat);
         setStatus(status);
         setAccess(access);
         setGroupUser(groupUser);
@@ -41,7 +42,7 @@ public class Chat implements Serializable{
     public void setDesc(String desc){this.desc=desc;}
     public void setGroupUser(Map<String,String> groupUser){this.groupUser=groupUser;}
     public void setMessages(Map<String,Message> messages){this.messages=messages;}
-    public void setCategorieChat(int categorieChat){this.categorieChat=categorieChat;}
+    public void setCategorieChat(String categorieChat){this.categorieChat=categorieChat;}
     public void setStatus(boolean status){this.status=status;}
     public void setAccess(boolean access){this.access=access;}
     public void setLastOpen(Date lastOpen){this.lastOpen=lastOpen;}
@@ -54,7 +55,7 @@ public class Chat implements Serializable{
     public String getDesc(){return this.desc;}
     public Map<String,String> getGroupUser(){return this.groupUser;}
     public Map<String,Message> getMessages(){return this.messages;}
-    public int getCategorieChat(){return this.categorieChat;}
+    public String getCategorieChat(){return this.categorieChat;}
     public boolean isStatus(){return this.status;}
     public boolean isAccess(){return this.access;}
     public Date getLastOpen(){return this.lastOpen;}

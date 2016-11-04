@@ -22,13 +22,13 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -36,10 +36,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -49,8 +49,7 @@ import java.util.Map;
 public class ProfileActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
     private final static String TAG = "WOS-Profil";
-    private Button button;
-    private View v_iewFormations,v_iewSchools,v_iew;
+    private View v_iewFormations,v_iewSchools,v_iew,v_iewFav;
     private int year;
     private int month;
     private int day;
@@ -58,7 +57,8 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
     static final int DATE_DIALOG_ID = 100;
     private Toolbar myToolbar;
     private TextView txtPseudo,txtLastname,txtFirstname,txtGenre,txtDescriptif,txtSchool,txtFormation,txtFavories,txtBirthday;
-    private Button btnDeco,modifPseudo,modifLastname,modifFirstname,modifGenre,modifDescriptif,modifFavories,modifSchool,modifFormation;
+    private ImageButton button,modifPseudo,modifLastname,modifFirstname,modifGenre,modifDescriptif,modifFavories,modifSchool,modifFormation;
+    private Button btnDeco;
     private String newPseudo,newLastname,newFirstname,newDescriptif;
     private EditText editPseudo,editLastname,editFirstname,editDescriptif;
     private DatabaseReference rootPseudos,rootProfil,rootFavs;
@@ -97,26 +97,26 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
         txtFormation = (TextView) findViewById(R.id.txtFormation);
         txtFavories = (TextView) findViewById(R.id.txtFavories);
 
-        //BUTTONS
-        modifPseudo = (Button) findViewById(R.id.modifPseudo);
-        modifLastname = (Button) findViewById(R.id.modifLastname);
-        modifFirstname = (Button) findViewById(R.id.modifFirstname);
-        modifGenre = (Button) findViewById(R.id.modifGenre);
-        modifDescriptif = (Button) findViewById(R.id.modifDescriptif);
-        modifSchool = (Button) findViewById(R.id.modifSchool);
-        modifFormation = (Button) findViewById(R.id.modifFormation);
-        modifFavories = (Button) findViewById(R.id.modifFavories);
-        btnDeco = (Button) findViewById(R.id.deco);
+        //IMAGE BUTTONS
+        modifPseudo = (ImageButton) findViewById(R.id.modifPseudo);
+        modifLastname = (ImageButton) findViewById(R.id.modifLastname);
+        modifFirstname = (ImageButton) findViewById(R.id.modifFirstname);
+        modifGenre = (ImageButton) findViewById(R.id.modifGenre);
+        modifDescriptif = (ImageButton) findViewById(R.id.modifDescriptif);
+        modifSchool = (ImageButton) findViewById(R.id.modifSchool);
+        modifFormation = (ImageButton) findViewById(R.id.modifFormation);
+        modifFavories = (ImageButton) findViewById(R.id.modifFavories);
 
+        //BUTTON
+        btnDeco = (Button) findViewById(R.id.deco);
 
         //GET CONTENT
         rootFavs.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists() && dataSnapshot.hasChildren()){
+                    //Set favories collection
                     for (DataSnapshot item : dataSnapshot.getChildren()){
-                        //Log.i(TAG,"K"+item.getKey().toString());
-                        //Log.i(TAG,"V"+item.child("name").getValue().toString());
                         listFavs.put(item.getKey().toString(),item.child("name").getValue().toString());
                     }
 
@@ -124,7 +124,7 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             if (dataSnapshot.exists()){
-
+                                //Get infos user
                                 String pseudo,firstname,lastname,descriptif,birthday,school,formation,favories,strGenre,strOnline;
                                 boolean genre,online;
 
@@ -143,8 +143,6 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
 
                                 mProfil = new User(pseudo,firstname,lastname,descriptif,birthday,school,formation,favories,genre,online);
 
-                                Log.i(TAG,"Result : "+mProfil.getPseudo()+", "+mProfil.getFirstname()+", "+mProfil.getLastname());
-
                                 //ADD CONTENT
                                 txtPseudo.setText(mProfil.getPseudo());
                                 txtFirstname.setText(mProfil.getFirstname());
@@ -155,8 +153,6 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
                                 }else {
                                     txtGenre.setText("Homme");
                                 }
-
-                                //TimeStamp date naissane -> AGE
 
                                 txtDescriptif.setText(mProfil.getDesc());
                                 txtSchool.setText(mProfil.getSchool());
@@ -170,8 +166,6 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
                                 str.substring(0,str.length()-2);
                                 str+=".";
                                 txtFavories.setText(str);
-                                Log.i(TAG,str);
-
                             }
                         }
 
@@ -193,8 +187,6 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
         //Calendar
         setCurrentDate();
 
-        //List Button schools
-
         //POPUPS
         addButtonListener();
         updatePseudo();
@@ -210,7 +202,6 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
         btnDeco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Log.i(TAG,"Merci Tchusss..");
                 //users.get(current_id).setOnline(false);
                 mAuth.signOut();
                 Intent profilActivite = new Intent(ProfileActivity.this, MainActivity.class);
@@ -222,10 +213,8 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
     }
 
     public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
 
-        // Check which radio button was clicked
         switch(view.getId()) {
             case R.id.radioHomme:
                 if (checked){
@@ -251,20 +240,15 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_chats:
-                // User chose the "Settings" item, show the app settings UI...
                 Intent chatIntent = new Intent(ProfileActivity.this,ListChatsActivity.class);
                 startActivity(chatIntent);
                 finish();
                 return true;
 
             case R.id.action_profil:
-                // User chose the "Favorite" action, mark the current item
-                // as a favorite...
                 return true;
 
             default:
-                // If we got here, the user's action was not recognized.
-                // Invoke the superclass to handle it.
                 return super.onOptionsItemSelected(item);
 
         }
@@ -273,37 +257,35 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
     public void setCurrentDate() {
 
         txtBirthday = (TextView) findViewById(R.id.txtBirthday);
-        //date_picker = (DatePicker) findViewById(R.id.date_picker);
-
         final Calendar calendar = Calendar.getInstance();
 
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
 
-        // set current date into textview
-        txtBirthday.setText(new StringBuilder()
-                // Month is 0 based, so you have to add 1
-                .append(month + 1).append("-")
-                .append(day).append("-")
-                .append(year).append(" "));
+        rootProfil.child("birthday").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                txtBirthday.setText(dataSnapshot.getValue().toString());
+            }
 
-        // set current date into Date Picker
-        //date_picker.init(year, month, day, null);
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.i(TAG,"Meh !! "+databaseError.getMessage().toString());
+            }
+        });
 
     }
 
     public void addButtonListener() {
 
-        button = (Button) findViewById(R.id.modifBirthday);
+        button = (ImageButton) findViewById(R.id.modifBirthday);
 
         button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-
                 showDialog(DATE_DIALOG_ID);
-
             }
 
         });
@@ -315,7 +297,6 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
 
         switch (id) {
             case DATE_DIALOG_ID:
-                // set date picker as current date
                 return new DatePickerDialog(this, datePickerListener, year, month,day);
         }
         return null;
@@ -324,18 +305,34 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
     private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
 
         public void onDateSet(DatePicker view, int selectedYear,int selectedMonth, int selectedDay) {
+
             year = selectedYear;
             month = selectedMonth;
             day = selectedDay;
 
-            // set selected date into Text View
-            txtBirthday.setText(new StringBuilder().append(month + 1)
-                    .append("-").append(day).append("-").append(year).append(" "));
+            month = month+1;
 
+            txtBirthday.setText(new StringBuilder().append(month)
+                    .append("/").append(day).append("/").append(year));
 
+            rootProfil.child("birthday").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.exists()){
+                        String date = day+"/"+month+"/"+year;
+                        rootProfil.child("birthday").setValue(date);
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    Log.i(TAG,"Meh !! "+databaseError.getMessage().toString());
+                }
+            });
         }
     };
 
+    //POPUPS
     public void updatePseudo(){
         modifPseudo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -411,7 +408,7 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
                     builderPseudo.show();
             }
         });
-    }//OK
+    }
 
     public void updateLastname(){
         modifLastname.setOnClickListener(new View.OnClickListener() {
@@ -467,7 +464,7 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
                 builderLastname.show();
             }
         });
-    }//OK
+    }
 
     public void updateGenre(){
         modifGenre.setOnClickListener(new View.OnClickListener() {
@@ -549,7 +546,7 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
                 builderFirstname.show();
             }
         });
-    }//OK
+    }
 
     public void updateDescriptif(){
         modifDescriptif.setOnClickListener(new View.OnClickListener() {
@@ -602,7 +599,7 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
                 builderDescription.show();
             }
         });
-    }//OK
+    }
 
     public void updateSchool(){
         modifSchool.setOnClickListener(new View.OnClickListener() {
@@ -726,6 +723,18 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
         });
     }
 
+    public void updateFavories(){
+
+        modifFavories.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProfileActivity.this, UpdateCategoriesActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    //SPINNERS
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
         // An item was selected. You can retrieve the selected item using
         // parent.getItemAtPosition(pos)
@@ -743,77 +752,7 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
         // Another interface callback
     }
 
-    public void updateFavories(){
-
-        modifFavories.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builderFavories = new AlertDialog.Builder(ProfileActivity.this);
-                builderFavories.setTitle("Modifier ma description ?");
-                LayoutInflater inflater = ProfileActivity.this.getLayoutInflater();
-                v_iew = inflater.inflate(R.layout.update_favories, null) ;
-                builderFavories.setView(v_iew);
-                list = (ListView) v_iew.findViewById(R.id.list_cats);
-                //liste categories
-                FirebaseListAdapter<Categorie> fatAdapter = new FirebaseListAdapter<Categorie>(
-                        ProfileActivity.this,
-                        Categorie.class,
-                        R.layout.categorie,
-                        rootFavs
-                ) {
-                    @Override
-                    protected void populateView(View v, Categorie model, int position) {
-                        linearFav = (LinearLayout) v.findViewById(R.id.categorie);
-                        TextView mtxtFav = new TextView(ProfileActivity.this);
-                        CheckBox mchkFav = new CheckBox(ProfileActivity.this);
-                        mtxtFav.setText(model.getName().toString());
-                        mtxtFav.setHeight(50);
-                        mtxtFav.setGravity(Gravity.CENTER);
-                        txtLp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT,0.8f);
-                        chkLp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                        mtxtFav.setLayoutParams(txtLp);
-
-                        mchkFav.setLayoutParams(chkLp);
-                        mchkFav.setGravity(Gravity.CENTER);
-                        mchkFav.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                onCheckboxClicked(v);
-                            }
-                        });
-                        String txtId = "txt_"+model.getName().toString().toLowerCase();
-                        String checkId = "check_"+model.getName().toString().toLowerCase();
-                        Log.i(TAG,"ID TEXTVIEW = "+txtId);
-                        Log.i(TAG,"ID CHECKBOX = "+checkId);
-                        mtxtFav.setTag(txtId);
-                        mchkFav.setTag(checkId);
-                        linearFav.addView(mtxtFav);
-                        linearFav.addView(mchkFav);
-                    }
-                };
-
-                list.setAdapter(fatAdapter);
-
-                builderFavories.setPositiveButton("Modifier", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        //Log.i(TAG,"onClick..");
-
-                        rootProfil.child("favories").setValue(mesNewFavs);
-                    }
-                });
-                builderFavories.setNegativeButton("Retour", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-                builderFavories.create();
-                builderFavories.show();
-            }
-        });
-    }
-
+    //CHECKBOXES
     public void onCheckboxClicked(View view) {
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
@@ -821,77 +760,78 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
         switch(view.getTag().toString()) {
             case "check_php":
                 if (checked){
-                    Log.i(TAG,"Php coché !");
-                    mesNewFavs += "7";
+                    mesNewFavs += "0";
                 }
                 else
                 {
-                    Log.i(TAG,"Php décoché !");
+                    mesNewFavs = mesNewFavs.replace("0", "");
                 }
                 break;
             case "check_ruby":
                 if (checked){
-                    Log.i(TAG,"ruby coché !");
                     mesNewFavs+="1";
                 }
                 else
                 {
-                    Log.i(TAG,"ruby décoché !");
-
+                    mesNewFavs = mesNewFavs.replace("1", "");
                 }
                 break;
             case "check_javascript":
                 if (checked){
-                    Log.i(TAG,"javascript coché !");
                     mesNewFavs+="2";
                 }
                 else
                 {
-                    Log.i(TAG,"javascript décoché !");
+                    mesNewFavs = mesNewFavs.replace("2", "");
                 }
                 break;
             case "check_java":
                 if (checked){
-                    Log.i(TAG,"java coché !");
                     mesNewFavs+="3";
                 }
                 else
                 {
-                    Log.i(TAG,"java décoché !");
+                    mesNewFavs = mesNewFavs.replace("3", "");
                 }
                 break;
             case "check_ui/ux":
                 if (checked){
-                    Log.i(TAG,"UI/UX coché !");
                     mesNewFavs+="4";
                 }
                 else
                 {
-                    Log.i(TAG,"UI/UX décoché !");
+                    mesNewFavs = mesNewFavs.replace("4", "");
                 }
                 break;
             case "check_veille tech.":
                 if (checked){
-                    Log.i(TAG,"Veille coché !");
                     mesNewFavs+="5";
                 }
                 else
                 {
-                    Log.i(TAG,"Veille décoché !");
+                    mesNewFavs = mesNewFavs.replace("5", "");
                 }
                 break;
             case "check_jobs":
                 if (checked){
-                    Log.i(TAG,"Jobs coché !");
                     mesNewFavs+="6";
                 }
                 else
                 {
-                    Log.i(TAG,"Jobs décoché !");
+                    mesNewFavs = mesNewFavs.replace("6", "");
+                }
+                break;
+            case "check_android":
+                if (checked){
+                    mesNewFavs+="7";
+                }
+                else
+                {
+                    mesNewFavs = mesNewFavs.replace("7", "");
                 }
                 break;
             default:
-                mesNewFavs="0";
+                mesNewFavs="6";
         }
     }
 

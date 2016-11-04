@@ -3,9 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/background"
-    android:background="@drawable/foret"
-
-   >
+    android:background="@drawable/foret">
 
     <TextView
         android:text=""
@@ -19,12 +17,13 @@
 
     <ImageView
         android:layout_marginBottom="50dp"
-            android:alpha="0.8"
-            android:layout_marginTop="50dp"
-            android:layout_height="313px"
-            android:background="@drawable/deeer"
-            android:layout_gravity="center"
-            android:layout_width="300px" />
+        android:alpha="0.8"
+        android:layout_marginTop="50dp"
+        android:layout_height="313px"
+        android:background="@drawable/deeer"
+        android:layout_gravity="center"
+        android:layout_width="300px" />
+
     <EditText
         android:inputType="textEmailAddress"
         android:textAlignment="center"
@@ -35,8 +34,7 @@
         android:hint="Email"
         android:textColor="@android:color/white"
         android:layout_marginTop="30dp"
-        android:textColorHint="@android:color/white"
-         />
+        android:textColorHint="@android:color/white" />
 
     <EditText
         android:textAlignment="center"
@@ -60,7 +58,6 @@
         android:textStyle="bold" />
 
     <Button
-
         android:id="@+id/registerbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -70,6 +67,5 @@
         android:textColor="@android:color/white"
         android:textSize="15dp"
         android:layout_below="@id/connect" />
-
 
 </LinearLayout>
